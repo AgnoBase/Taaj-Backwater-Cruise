@@ -1,0 +1,89 @@
+{% load static %} 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tajboat-website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href={% static "css/home_page.css" %}>
+</head>
+<body>
+     <section>
+           <!--NAVBAR-->    
+      <navbar>                        
+        <div class="links">
+            <a href="#intro">HOME</a>
+            <a href="#gallery">GALLERY</a>
+            <a href="{% url 'service-page' %}">SERVICES</a>
+            <a href="#aboutus">ABOUT US</a>
+        </div>
+          <div class="nav">
+             <a href="#contact">CONTACT</a>
+        </div>
+    </navbar> 
+    
+        <!--Boat-Home-->
+     
+      <div class="container" id="intro">
+        <div class="set">
+        <h1>DUMMY TEXT</h1>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna </p>
+        <button type="button" class="btn btn-primary">Learn More</button>
+      </div>
+    </div>
+  
+     </section>
+
+    <!--ABOUT-US-->    
+
+    <article>
+      <div class="about" id="aboutus">
+        <h1>About Us</h1> 
+        <h3>Poovar is a small coastal village in the Trivanthaapuram
+        </h3>
+      </div>
+      <div>
+        <p>Kingfisher Boat Cruise provides wide range of backwater cruises though the Neyyar Lake in Poovar. We've picked Poovar's best boat tours along the lake Neyyar and the village's picturesque canalways. We offer one hour/two hour rides in motor boats and country boats. 
+          If you visit Kovalam, Kanyakumari, Trivandrum don't miss the opportunity to visit Poovar which is close to these places to enjoy the real and unexploited Poovar with golden sanded beach and beautiful backwaters with estuaries, mangroves.
+        </p>
+      </div>      
+    </article>
+    
+    <!--IMAGE-SECTION-->
+   <div class="wrap" id="gallery"> 
+    <div class="right-sec">
+          <div class="top">
+            <h2>Poovar is a small coastal village</h2>
+          </div>
+        <p>
+          Kingfisher Boat Cruise provides wide range of backwater cruises though the Neyyar Lake in Poovar. We've picked Poovar's best boat tours along the lake Neyyar and the village's picturesque canalways. We offs.
+        </p>
+        <ul>Types of Services</ul>
+          <li>Shikara Boating</li>
+          <li>Sunset Boating</li>
+          <li>Honeymoon Cruise</li>
+    </div>
+    <div class-="left-sec">
+      <img src="{% static 'image/boattry.jpg' %}" alt="test-image">
+    </div>
+  </div>
+
+ <!--ADDRESS SECTION-->
+
+    <div class="add-sec" id="contact">
+        <div class="block">
+            <h1>CONTACT US</h1>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1606.3620760896008!2d77.0755356!3d8.3231153!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b05a90c215fa469%3A0x2b6fc66679afe1bd!2sBund%20Rd%2C%20Poovar%2C%20Kerala!5e1!3m2!1sen!2sin!4v1675714547377!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <div class="content">
+                     
+                     <h4>Address</h4>
+                     <p>Bund Road , Poovar, Thiruvananthapuram,Kerala-695525</p>
+                     <h4>Phone</h4>
+                     <p>+91-9961071628</p>
+                     <h4>Email</h4>
+                     <p> sudhakaranthampi5@gmail.com</p>
+              </div>
+        </div>
+    </div>
+</body>

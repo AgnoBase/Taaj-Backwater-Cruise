@@ -1,0 +1,16 @@
+{% extends "admin_area/base.html" %}
+{% block title %}{% endblock title %}
+
+{% block content %}
+<h2>Reservations</h2>
+{% for reservation in reservations %}
+<h3>{{reservation.fname}}</h3>
+<h3>{{reservation.mname}}</h3>
+<h3>{{reservation.lname}}</h3>
+<h3>{{reservation.email}}</h3>
+<h3>{{reservation.cnum}}</h3>
+<h3>{{reservation.arrivedate}}</h3>
+<h3>{{reservation.time}}</h3>
+<h3>______________________________________________________________________________________________________________________________________</h3>
+{% endfor %}
+{% endblock content %}

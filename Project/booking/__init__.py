@@ -1,0 +1,1 @@
+print("|.|.|.|.|.|.Booking is working.|.|.|.|.|.|.|.|")

@@ -1,0 +1,11 @@
+{% extends "admin_area/base.html" %}
+{% block title %}
+{% endblock title %}
+{% block content %}
+<h1>{{request.user}} profile</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="email" name="nemail" placeholder="new email"><br>
+    <button type="submit" name="email">update admin profile</button>
+</form>
+{% endblock content %}
