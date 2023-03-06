@@ -12,6 +12,9 @@ body{
 #brand{
     display: none;
 }
+#hidden{
+    display: none;
+}
 .navbar {
     display: flex;
     position: relative;
@@ -37,6 +40,7 @@ body{
     text-decoration: none;
     color: black;
     padding: 1rem;
+    font-size: large;
   }
   .navbar-links li:hover {
     text-decoration : underline 3.5px #192a52;
@@ -126,19 +130,47 @@ article p{
 } 
 
 /* image section */
-.wrap{
-   height : 100%;
-   background-color: white;
+.flex-section{
+    display: flex;
+    flex-direction: row;
 }
-.right-sec{
+.image-grid {
+    margin-top:16vh;
+	--gap: 16px;
+	--num-cols: 4;
+	--row-height: 300px;
+
+	box-sizing: border-box;
+	padding: var(--gap);
+
+	display: grid;
+	grid-template-columns: repeat(var(--num-cols), 1fr);
+	grid-auto-rows: var(--row-height);
+	gap: var(--gap);
+}
+
+.image-grid>img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.image-grid-col-2 {
+	grid-column: span 2;
+}
+
+.image-grid-row-2 {
+	grid-row: span 2;
+}
+
+.img-cont{
     height: 100%;
-    float : right;
-    width: 32vw;
+    width: 50vw;
     padding-top: 27vh;
-    padding-right: 10vw;
-    
+    margin-left: 6vw;
+    margin-right:2.6vw;
 } 
-.right-sec p{
+.img-cont p{
     font-family:'Poppins', sans-serif;
     font-weight: 400;
     line-height: 2.4vh;
@@ -149,7 +181,7 @@ article p{
     font-size: 3vh;
 }
 ul{
-    font-family:'Poppins', sans-serif;
+    font-family:'Inter', sans-serif;
     font-weight: 400;
     padding-top: 1.5vh;
     text-decoration: underline 3px black;
@@ -158,47 +190,66 @@ ul{
 li{
     padding-left: 5.7vh;
     list-style-type:none; 
-    line-height: 2.5vh;
+    line-height: 3vh;
+} 
+.bt-shadow{
+    width: 100%;
+    margin-top: 4vh;
+    margin-left: 2vh;
 }
-.left-sec{
-    margin:0;
-    float:left;
-    position: static;
+button a{
+    text-decoration: none;
 }
-img{
-    width:100%;
-    border-radius: 14px;
+#t-b{
+    color:black;
+}
+#t-w{
+    color: white;
+}
+.bt-shadow{
+   
+   /*box-shadow: 2px 2px 5px black;*/
+   width: 7vw;
 }
 
-.img1{
-    position: absolute;
-    margin-top: 6vh;
-    margin-left: 6vw;
-    width:25vw;
-    height: 60vh;
+
+/* Anything udner 1024px */
+@media screen and (max-width: 1024px) {
+	.flex-section{
+      display: flex;
+      flex-direction: column;
+    }
+    .image-grid {
+        margin-top:3rem;
+		--num-cols: 2;
+		--row-height: 200px;
+	}
+
+    .img-cont{
+        width:auto;
+        margin-top: -5rem;
+        margin-bottom: 2rem;
+    }
+    .top h2{
+        font-size: 3vh;
+    }
+    .img-cont p{
+        font-size:2vh;
+    }
+    .img-cont ul{
+        font-size: 2vh;
+        font-weight: bold;
+    }
+    .img-cont li{
+        font-size: 2vh;
+    }
+    .bt-shadow{
+        width:26.8vw;
+        margin-top: 3vh;
+        margin-left:3vw;
+    }
 }
-.img2{
-    position: absolute;
-    margin-top: 8vh;
-    margin-left: 38vw;
-    width:15vw;
-    height: 20vh;
-}
-.img3{
-    position: absolute;
-    margin-top: 50vh;
-    margin-left: 11vw;
-    width:15vw;
-    height: 20vh;
-}
-.img4{
-    position: absolute;
-    margin-top: 65vh;
-    margin-left: 45vw;
-    width:13vw;
-    height: 22vh;
-    transform: rotate(90deg);
-}
+
 /* address section */
 .add-field{
     height:100%;
@@ -272,6 +323,10 @@ iframe{
     width: 23.7vw;
     line-height: 2.5vh;
 } 
+ button .faq-button{
+    text-decoration: none;
+    color:white;
+}
 
  /*Right-side faq */
  .right{
@@ -310,15 +365,21 @@ iframe{
 
  /*Responsive-page*/
 
-@media screen and (min-height:480px) and (max-width:990px)
+@media screen and (max-width:990px)
 {  body{
     background-color: white;
 }
  /*Navbar*/
  #brand{
     display: block;
-    padding-top: 1.7vh;
-    color:black;
+    padding-top: 0.1rem;
+}
+#brand a{
+    text-decoration: none;
+    color: black;
+}
+#hidden{
+    display: block;
 }
  .navbar {
     flex-direction: column;
@@ -352,8 +413,16 @@ iframe{
 .navbar-links.active {
     display: flex;
 }
+ #hide{
+    display: none;
+ }
 /* landing-page*/
-   
+   section{
+    background:url("images/boat.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+   }
     .set{
         text-align: center;
         margin: 3vh;
@@ -374,88 +443,41 @@ iframe{
         padding-top: 22vh;
      }
      .about h3{
-        font-size: 4.5vh;
+        font-size: 1.5rem;
      }
      article p{
-        font-size: small;
+        font-size: 0.7rem;
      }
-
-    /*Gallery*/ 
-   .wrap{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-   }
-   .left-sec{
-    padding:30vh;
-    height:10vh;
-    position: static;
-}
-
-.img1{
-    position: absolute;
-    margin-top: -9%;
-    margin-left: 16vw;
-    width:70vw;
-    height: 40vh;
-}
-.img2{
-    position: absolute;
-    margin-top: 54%;
-    margin-left: 50vw;
-    width:40vw;
-    height: 30vh;
-    
-}
-.img3{
-    position: absolute;
-    margin-top: 58%;
-    margin-left: 7vw;
-    width:40vw;
-    height: 50vh;
-}
-.img4{
-      display: none;
-}
- .right-sec{
-    height:60vh;
-    width: auto;
-    margin-top: -17vh;
-    margin-left:5vh;
-    margin-bottom: 16%;
- }
 
     /*Address-section*/
     .add-field{
-        margin-left: 50%;
-        margin-right: 50%;
-        height: 100%;
-        margin-top:100vh;
-    }
-    .add-sec{
-        height: auto;
-        padding-top:3vh;
-        margin-top:27vh;
-        position: absolute;
+        background: none;
     }
     .block{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-right: auto;
+       background: none;
+       margin-top: 8rem;
+       border-radius: 0;
+       display: flex;
+       flex-direction: column;
+       background: linear-gradient(to top, #3F99F9 0%,#1C2843 95%);
+       width: 100%;
     }
     iframe{
         margin-top: 10vh;
         width: 70vw;
         height:50vh;
-        margin-left: 4vh;
-        margin-right: 4vh;
+        margin-left: 15vw;
     }
     .content{
         margin-top: -15vh;
+        margin-left:-5.44rem;
         margin-bottom : -15vh;
     }
-
+  .content h1{
+    width:100%;
+    font-size:larger;
+    margin-left:3.2rem;    
+  }
     /*faq-sec*/
     .faq-sec{
         display: none;
@@ -500,4 +522,4 @@ iframe{
     margin-bottom: 6vh;
    }*/
     
-}  
+} 

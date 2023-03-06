@@ -22,9 +22,12 @@
                 <li><a href="#intro">Home</a></li>
                 <li><a href="#gallery">Gallery</a></li>
                  <li><a href="#aboutus">About Us</a></li>
-                 <li><a href="#faq">FAQs</a></li>
+                 <li id="hide"><a href="#faq">FAQs</a></li>
+                 <li id="hidden"><a href="faqmobile.html">FAQs</a></li>
                  <li><a href="#contact">Contact Us</a></li>
-              </ul>
+                 <li><a href="Services-page/service.html">Services</a></li>
+                </ul> 
+               
             </div>
           </nav> 
     
@@ -56,27 +59,31 @@
     </article>
     
     <!--IMAGE-SECTION-->
-   <div class="wrap" id="gallery"> 
-    <div class="right-sec">
+    <div class="flex-section" id="gallery"> 
+        <div class="image-grid">
+	    	<img class="image-grid-col-2 image-grid-row-2" src="images/img4.jpg" alt="Boating-Images">
+	    	<img src="images/img2.jpeg" alt="Boating-Images">
+	    	<img src="images/img3.jpg" alt="Boating-Images">
+	    	<img src="images/img1.jpg" alt="Boating-Images">
+        <img src="images/img13.jpg" alt="Boating-Images">
+	    </div>
+
+    
+        <div class="img-cont">
           <div class="top">
             <h2>Poovar is a small coastal village</h2>
           </div>
-        <p>
-          Kingfisher Boat Cruise provides wide range of backwater cruises though the Neyyar Lake in Poovar. We've picked Poovar's best boat tours along the lake Neyyar and the village's picturesque canalways. We offs.
-        </p>
-        <ul>Types of Services</ul>
-          <li>Shikara Boating</li>
-          <li>Sunset Boating</li>
-          <li>Honeymoon Cruise</li>
+          <p>
+            Kingfisher Boat Cruise provides wide range of backwater cruises though the Neyyar Lake in Poovar. We've picked Poovar's best boat tours along the lake Neyyar and the village's picturesque canalways. We offs.
+          </p>
+          <ul>Types of Services</ul>
+           <li>Shikara Boating</li>
+           <li>Sunset Boating</li>
+           <li>Honeymoon Cruise</li> 
+            <button type="button" class="btn btn-light bt-shadow" ><a href="gallery-section/gallery.html" id="t-b">See More</a></button>
+            <button type="button" class="btn btn-primary bt-shadow" ><a href="Services-page/service.html" id="t-w">Book now</a></button>
+        </div>    
     </div>
-
-    <div class-="left-sec">
-       <div class="img1">  <img src="images/boattry.jpg" alt="test-image">  </div>
-       <div class="img2"> <img src="images/boattry2.jpg" alt = "test-image"></div>
-       <div class="img3"> <img src="images/boattry3.jpg" alt = "test-image"></div>
-       <div class="img4"> <img src="images/boattry4.jpg" alt = "test-image"></div>
-   </div>
-   </div>
 
  <!--ADDRESS SECTION-->
   <div class="add-field">
@@ -102,7 +109,7 @@
        <div class="left">
            <h4>Frequently Asked Questions</h4> 
            <p>Kingfisher Boat Cruise provides wide range of backwater cruises though the Neyyar Lake in Poovar. We've picked Poovar's best boat tours along the lake Neyyar and the village's picturesque canalways. We offs.</p>
-           <button type="button" class="btn btn-primary">Learn More</button>
+           <button type="button" class="btn btn-primary"><a href="faqmobile.html" class="faq-button">Learn More</a></button>
           </div>
        
         
@@ -155,3 +162,4 @@
     </div> 
     <script src="index.js"></script>
 </body>
+</html>

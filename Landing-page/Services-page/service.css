@@ -1,0 +1,574 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+body{
+    margin: 0;
+    background:white;
+}
+
+/*---Section-service main page----*/
+section{
+    width: 100%;
+    height: 100%;
+    background:url("images/wave.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-y: -10vh;
+}
+
+/*navbar*/
+#brand{
+    display: none;
+}
+#hidden{
+    display: none;
+}
+.navbar {
+    background-color:none;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding:  1.4vh;
+  }
+  .navbar-links {
+    height: 100%;
+  }
+  
+  .navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+  }
+ 
+  .navbar-links a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    font-size: large;
+  }
+  .navbar-links li:hover {
+    text-decoration : underline 3.5px white;
+    text-underline-offset: 1.32vh;
+  }
+  
+  .toggle-button {
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+  }
+  
+  .toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+/*-----------card-design----------------*/
+.img1 {
+    filter: drop-shadow( 5px 5px 5px black);
+    width: 25vw;
+    position: relative;
+    left: 30vw;
+    margin-top: 10vh;
+    transform: rotate(-15deg);
+    z-index: 4;
+    
+  }
+  
+  .img2 {
+    filter: drop-shadow(5px 5px 10px black);
+    width: 25vw;
+    top: -5.7vh;
+    position: relative;
+    left: 20vw;
+  }
+  .img1:hover{
+    filter: drop-shadow( 5px 5px 10px white);
+  }
+  .img2:hover{
+    filter: drop-shadow( 5px 5px 5px white);
+  }
+/*-----------Steps-Bar----------------*/
+.bar-sec{
+    width:100%;
+    height:10%;
+    margin-top: 8vh;
+}
+.bar{
+    line-height: 0;
+    border-radius: 200px;
+    background-color: white;
+    height: 10vh;
+    bottom: 80vh;
+    width: 70vw;
+    margin-left: 15vw;
+    margin-right: 2vw;
+    filter: drop-shadow(5px 5px 30px #a4a1a1);
+}
+.head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: "Inter", sans-serif;
+    font-size: 2.4vh;
+    padding-top: 0.25rem;
+}
+.head:hover{
+  text-decoration: underline;
+}
+.below{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 0.25rem;
+}
+.below:hover{
+    color:#a4a1a1;
+}
+.circle {
+    border-radius: 100%;
+    height: 4vw;
+    width: 9vh;
+    float: right;
+    background: linear-gradient(222.15deg, #588FDA 28.76%, rgba(104, 163, 244, 0) 109.88%);
+    margin-top: -9.3vh;
+    margin-right: 0.3vw;
+}
+
+.circle:hover{
+  background: linear-gradient(222.15deg, #0d2ff1 28.76%, rgba(119, 110, 216, 0) 109.88%);;
+}
+
+/*Card-carousel*/
+.direction{
+    text-align: center;
+}
+.direction button{
+    font-family: cursive;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border:none;
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    transition: 0.5s;
+    margin:0 10px;
+}
+.direction button:hover{
+    background: rgb(40, 39, 39);
+    color: rgb(206, 204, 204);
+}
+.item{
+    border-radius: 15px;
+    width:300px;
+    height:500px;
+    background: url("images/cardpic.png");
+    background-size: cover;
+    overflow: hidden;
+    transition: 0.5s;
+    margin:10px;
+    scroll-snap-align: start;
+}
+
+#list{
+    display: flex;
+    width:max-content;
+}
+#formList{
+    width:1280px;
+    max-width: 100%;
+    overflow: auto;
+    margin:100px auto 50px;
+    scroll-behavior: smooth;
+    scroll-snap-type: both;
+}
+#formList::-webkit-scrollbar{
+    display: none;
+}
+
+
+/*Contents-in-cards*/
+.item h2{
+    margin-top: 3rem;
+    text-align: center;
+}
+.item .content{
+    padding:30px;
+    font-family: monospace;
+}
+
+ .d-button{
+    width: 6rem;
+ }
+ .content button{
+    margin-bottom: 0;
+    margin-left: 1.3rem;
+    text-decoration: none;
+    border-color: none;
+    background: none;
+    border-radius:5px;
+    cursor: pointer;
+    width: 6vw;
+    height: 5vh;
+  }
+  .content button:hover{
+    background-color: black;
+    color:white;
+  }
+  .price {
+    color: white;
+    font-size: 2vh;
+    width: 20vw;
+  justify-content: center;
+  }
+
+  td{
+    width: 60vw;
+  }
+  .description {
+    display: none;
+    margin-top: 12.87vh;
+    margin-right:2vw;
+  }
+  
+  .description p {
+    color: white; 
+    width:16rem;
+    font-size: 0.8rem;
+    font-family: 'Poppins', sans-serif;  
+  }
+  
+  table {
+    width: 100%;
+    margin-top: 23vh;
+  }
+  
+  td {
+    padding: 0.6vh;
+  }
+ 
+
+  /*--------Book button--------*/
+  .book-boat{
+    margin-left: 7.64vw;
+    text-decoration: none;
+    border: none;
+    color: white;
+    background: black;
+    border-radius:100%;
+    cursor: pointer;
+    width: 4vw;
+    height: 8vh;
+  }
+ /*--Footer---*/
+  footer {
+  position: relative;
+  margin-top: 8vh;
+  background: linear-gradient(90.14deg, #223B61 3.66%, rgba(63, 153, 249, 0.473958) 91.56%);
+  height: 5vh;
+  width: 100%;
+  bottom: 0px;
+}
+  
+
+  /*Responsive media querey*/
+  @media screen and (max-width: 1024px){
+    .item{
+        width: calc(87vw -37vw);
+        background-size: cover;
+    }
+    .item .content{
+      margin:25px;
+      font-family: monospace;
+      text-align: center;
+  }
+   .content button{
+    width: 12vw;
+    margin-bottom:0.5rem;
+   }
+   .content button:hover{
+    background-color: black;
+    color: white;
+   }
+   .price{
+    margin-top: 2vh;
+   }
+   .description p{
+    text-align: left;
+    margin-left: -2vh;
+    margin-top: -4vh;
+   }
+
+   /*-----book button ----*/
+   .book-boat{
+    margin-top: -2vh;
+    margin-left: 12.3vw;
+    border:none;
+    width: 5vw;
+    height: 9vh;
+  }
+
+   /*----step-bar----*/
+   .bar{
+    width: 87vw;
+    margin-left: 7vw;
+   }
+   .head p{
+    font-size: 2vh;
+    padding: 0.8vw;
+}
+   .below p{
+    font-size: 2.3vh;
+    margin-top:1vh;
+   }
+   .circle{
+    display: none;
+   }
+   /*-----book button ----*/
+   .book-boat{
+    margin-top: -2vh;
+    margin-left: 12.3vw;
+    border:none;
+    width: 6vw;
+    height: 9.6vh;
+  }
+
+}
+
+ @media screen and (max-width:825px) {
+  .content button{
+    margin-top:-5vh;
+    border:none;
+  } 
+  .price{
+    margin-top:-19vh;
+    margin-left: 1.83vh;
+    font-size:1.4rem;
+   }   
+  .description{
+      margin-top: 19.6vh;
+     }    
+  
+    /*-----book button ----*/
+    .book-boat{
+      margin-left: 15.5vw;
+      width: 9vw;
+      height: 6.5vh;
+    }
+  
+ }
+
+
+  
+  @media screen and (max-width:770px) {
+    
+        /*Navbar*/
+ #brand{
+  display: block;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  font-size: 2.5vh;
+}
+#brand a{
+  text-decoration: none;
+  color: white;
+}
+#hidden{
+  display: block;
+}
+.navbar {
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Inter', sans-serif;
+  height: 100%;
+}
+
+.toggle-button {
+  display: flex;
+  width: 28px;
+  height: 20px;
+  margin-right:7vh;
+}
+.navbar-links {
+  display: none;
+  width: 100%;
+  margin-top: 6vh;
+}
+
+.navbar-links ul {
+  width: 100%;
+  flex-direction: column;
+}
+
+.navbar-links ul li {
+  text-align: center;
+}
+
+.navbar-links ul li a {
+  padding: .5rem 1rem;
+}
+
+.navbar-links.active {
+  display: flex;
+}
+#hide{
+  display: none;
+}
+
+    /*svg image*/
+    section{
+        width: 100%;
+        height: 100%;
+    }
+    /*-----------card-design----------------*/
+.img1 {
+    filter: drop-shadow( 5px 5px 5px black);
+    width: 50vw;
+    left: 7vw;
+    margin-top: 13vh;    
+  }
+.img2 {
+    filter: drop-shadow(5px 5px 5px black);
+    width: 37vw;
+    margin-top: 13vh;
+    left: -1rem;
+    z-index: 1;
+  }
+  .img1,.img2:hover{
+    filter: drop-shadow( 5px 5px 5px black);
+  }
+
+    /*-----step-bar----*/
+    .bar{
+        border-radius: 10%;
+        width: 80vw;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        margin-left: 10vw;
+    }
+    .head{
+        display: flex;
+        flex-direction: column;
+        padding-left: 7vw;
+    }
+    .head p{
+        width:40vw;
+        height: auto;
+        font-size: 2vh;
+        padding: 0.8vw;
+    }
+    .below{
+        display: none;
+    }
+    .circle {
+      display: block;
+        height: 27.3vh;
+        width: 30vw;
+        border-radius: 50px;
+        margin-top: 3vw;
+        margin-left:10vw;
+        margin-right: 2vw;
+        margin-bottom: 1vh;
+      }
+    
+    /*--------card-content----------*/
+    .content button{
+      width: 18vw;
+      font-size: 1.5rem;
+    }
+    .price{
+      width: 60vw;
+      margin-left:8vw;
+      margin-top: -15vh;
+    }
+    .description{
+      margin-left: 22vw;
+    }
+    /*-----book button ----*/
+   .book-boat{
+    margin-left: 41vw;
+    width: 10vw;
+    height: 8vh;
+  }
+    /*------card-carousel--------*/
+    .item{
+        width: calc(87vw / 1);
+        background-size:cover;
+     }
+     .direction{
+         display: none;
+     }
+   }
+
+   @media screen and (max-width:550px) {
+            .content button{
+              width: 45vw;
+              font-size: 1.17rem;
+            }   
+            .price{
+              margin-left:1vw;
+            }
+            table{
+              margin-top: 19vh;
+            }
+            .description{
+              margin-left: -1vh;
+            }
+            .book-boat{
+              margin-left: 35vw;
+              width:18vw;
+              height: 8vh;
+            }
+   }
+   
+   @media screen and (max-width : 320px){
+    
+    /*----step bar ----*/
+     .bar{
+      width: 80vw;   
+      margin-left: 10vw;   
+     }    
+    .head p{
+      font-size: 5vw;
+    }
+    
+    /*----card content ----*/
+    .content button{
+      width:30vw;
+      font-size: 1rem;
+    }
+    .price{
+      font-size: 1rem;
+    }
+    .description{
+      margin-left: -5vh;
+    }
+    .description p {
+      font-size: 1.5vh;
+    }
+    .book-boat{
+      width:15vw;
+      height: 7vh;
+    }
+   }
+
+ 
+ 
+
+   
