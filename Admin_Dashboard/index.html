@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Shikara Boating</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!--SIDEBAR-->
+    <section id="sidebar">
+        <a href="#" class="brand">TajBackwater Cruise</a>
+        <ul class="side-menu">
+            <li class="divider">Plan Info</li>
+            <li><a href="#"><i class='bx bxs-package icon'></i><b>Packages</b></a>
+            </li>
+            <li><a href="#"><i class='bx bx-laptop icon'></i><b>Reservation</b></a></li>
+            <li class="divider">Setting</li>
+            <li><a href="#"><i class='bx bxs-envelope icon'></i><b>Change Email</b></a></li>
+            <li><a href="#"><i class='bx bx-lock-open-alt icon'></i><b>Change Password</b></a></li>
+            <li><a href="#"><i class='bx bxs-user-plus icon'></i><b>Add New User</b></a></li>
+            <li class="dvd"><a href="#"><i class='bx bx-exit icon'></i><b>Logout</b></a></li>
+        </ul>
+    </section>
+        <!--SIDEBAR-->
+        <!--MAIN-->
+        <div class="center">
+        <section>
+        <main>
+            
+            <h1 class="title"><b>Welcome</b>, Admin</h1>
+            <li><a href="#" class="active"><i class='bx bx-edit icon' ></i> Create Packages</a></li>
+            <h3 class="Packages"><b>Your Packages</b></h3>
+            <table class="table">
+                <tr>
+                    <td>S.No.</td>
+                    <td>Package Name</td>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>Normal Boating</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>Sunrise Boating</td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td>Sunset Boating</td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td>Shikara Boating</td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td>Honeymoon Boating</td>
+                </tr>
+            </table>
+            <div class="graph">
+                <canvas id="myChart"></canvas>  
+              </div>
+          
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+          
+              <script>
+                    const ctx = document.getElementById('myChart');
+          
+                    new Chart(ctx, {
+                      type: 'bar',
+                      data: {
+                        labels: ['Normal Boating', 'Shikara Boating', 'Sunrise Boating', 'Sunset Boating', 'Honeymoon'],
+                        datasets: [{
+                          label: '',
+                          data: [1,2,3,4,5],
+                          backgroundColor: [
+                  'rgba(255, 99, 132, 0.2)',
+                  'rgba(255, 159, 64, 0.2)',
+                  'rgba(255, 205, 86, 0.2)',
+                  'rgba(75, 192, 192, 0.2)',
+                  'rgba(54, 162, 235, 0.2)',
+                  'rgba(153, 102, 255, 0.2)',
+                  'rgba(201, 203, 207, 0.2)'
+                ],
+                borderColor: [
+                  'rgb(255, 99, 132)',
+                  'rgb(255, 159, 64)',
+                  'rgb(255, 205, 86)',
+                  'rgb(75, 192, 192)',
+                  'rgb(54, 162, 235)',
+                  'rgb(153, 102, 255)',
+                  'rgb(201, 203, 207)'
+                ],
+                          borderWidth: 1
+                        }]
+                      },
+                      options: {
+                        scales: {
+                          y: {
+                            beginAtZero: true
+                          }
+                        }
+                      }
+                    });
+              </script>
+        </main>
+        
+        <!--MAIN-->
+    </section></div>
+</body>
+</html>
