@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Booking Form</title>
+    
+</head>
+
+<body>
+    <section>
+        <div class='imgbx'>
+            <img class="form-img" src="Book Boat.png" alt="Boat photo">  
+        </div>
+        <div class='contentbx'>
+            <div class='formbx'>
+                <div class='field email-form'>
+                    <form action="" method="POST" onsubmit="verify()">
+                        <div class="head">
+                            <span>
+                                <p id="boat-name">Shikara Boating</p>
+                                <p id="details">Enter your details</p>
+                            </span>
+                        </div>
+                        <span>
+                            <h2>Email Address</h2>
+                        </span>
+                        <div class="verify-email">
+                        <input class="inputbx", id="label_name", placeholder="Email">
+                          <button type='submit' name='verify' class="verify">verify</button> 
+                        </div>
+                </form>
+                </div>
+                <form action=''method ='POST' name="form-booking" onsubmit="validation()">
+                    
+                    
+                    <span>
+                        <h2> Name</h2>
+                    </span>
+                    <div class='field'>   
+                        <input class="inputbx", id="label_name", placeholder= "First name">
+                        <input class="inputbx", id="label_name", placeholder= "Middle name">
+                        <input class="inputbx", id="label_name", placeholder= "Last name">
+                    </div>
+                    <span>
+                        <h2> Contact No.</h2>
+                    </span>
+                    <div class='field'>
+                        <input name="cnum"  , id="label-name" , placeholder="Enter your Mobile Number" , class="inputbx">
+                    </div>
+                    <div>
+                        <span>
+                            <h2>Plan information</h2>
+                        </span>
+</div>
+                    <div class='field'>
+                        <input type="date", ṇame="date", id="label-name", class="inputbx", placeholder="Date">
+                        <input type="time", ṇame="time", id="label-name", class="inputbx", placeholder="Time">
+                    </div>
+                    <div>
+                        <span>
+                            <h2>Members</h2>
+                        </span>
+                    </div>
+                    <div class='field'>
+                        <input name="adults", id="label-name", placeholder="No. of adults", class="inputbx">
+                        <input name="Children", id="label-name", placeholder="No. of children", class="inputbx">
+                    </div>
+                    <div class="btn-flex">
+                        <button class="btn" type="submit" value="">Book Now</button>
+                    </div>
+                </form>
+                
+                </div>
+        </div>
+        </div>
+    </section>
+</body>
+</html>
