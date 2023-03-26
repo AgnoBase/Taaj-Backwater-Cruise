@@ -120,3 +120,8 @@ function price5()
 
 }
  
+/* open booking form */
+function bookForm(){
+    /*window.open("../../Booking form/index.html")*/
+    window.location.href="../../Booking form/index.html"
+ }
