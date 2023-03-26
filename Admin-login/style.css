@@ -2,7 +2,7 @@ body{
     font-family: montserrat;
     margin: 0;
     display: flex;
-    align-items: ceneter;
+    align-items: center;
     background: url(./background.jpg);
     background-size: cover;
 
@@ -109,4 +109,15 @@ input[type="submit"]{
 input[type="submit"]:hover{
     border-color: #02055A;
     transition: .5s;
+}
+
+@media screen and (max-width:393px){
+    body{
+        width: 100%;
+        align-items: center;
+    }
+    .center{
+        width: 80%;
+        height: 60vh;
+    }
 }

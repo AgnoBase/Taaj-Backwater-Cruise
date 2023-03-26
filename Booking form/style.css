@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .head {
+            margin-bottom: 6%;
+
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+        }
+
+        section .imgbx {
+            position: relative;
+            width: 50vw;
+            height: 100vh;
+        }
+
+        section .imgbx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        section .contentbx {
+            display: flex;
+            width: 50%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section .contentbx .formbx {
+            margin: 10%;
+        }
+
+        section .contentbx .formbx .inputbx {
+            margin-bottom: 2vh;
+        }
+
+        section .contentbx .formbx span p {
+            font-size: 4vh;
+        }
+
+        section .contentbx .formbx span h2 {
+            margin-top: 0px;
+            margin-bottom: 1vh;
+        }
+
+        #boat-name {
+            font-size: 7vh;
+            font-weight: bolder;
+        }
+
+        #label-name {
+            font-weight: 800;
+            color: #8A8484;
+        }
+
+        #details {
+            color: #8A8484;
+            font-weight: 600;
+            font-size: 3vh;
+            font-weight: bolder;
+            margin-top: -3%;
+        }
+        .email-form{
+            display: flex;
+        }
+        .inputbx {
+            border: 1px #ccc;
+            border-radius: 1vh;
+            box-shadow: 0px 0px 6px;
+            padding: 1.5vh;
+            width: 100%;
+        }
+
+        .field {
+            display: flex;
+        }
+
+        .field input {
+            margin-right: 2%;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .btn {
+            background: #152238;
+            border: none;
+            color: white;
+            padding: 3% 10%;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 850;
+            display: inline-block;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 25px;
+            margin-top: -5px;
+
+        }
+
+        .btn-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+   
+         /* email-verification field */
+        .verify-email{
+             display:flex;
+             flex-direction: row;
+         }
+        .verify{
+            background: #152238;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            padding: 3%;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            width: 12vw;
+            margin-top:-2vh;
+            margin-left: 200px;
+            align-items: center;
+        }
+
+@media screen and (max-width:720px){
+     section{
+        margin-top:-1.2rem;
+        flex-direction: column;
+        height:auto;
+        margin-left: 27vw;
+     } 
+    .imgbx{
+        margin-top:-36vh;
+    }
+    .form-img{
+        transform: rotate(-90deg);
+        width:100%;
+     }
+   /*Content-box*/
+    .contentbx{
+      margin-top:-30vh;
+    }
+     /*HEading-name*/
+     #boat-name{
+        font-size:2rem;
+     }
+    .verify-email{
+        flex-direction: column;
+    }
+    .verify{
+        border-radius:5px;
+        width:22vw;
+        margin-top:0.78vh;
+    }
+
+    /*book now button*/
+    .btn-flex{
+        margin-top:2vh;
+    }
+}
