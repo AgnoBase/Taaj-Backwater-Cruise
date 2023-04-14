@@ -1,0 +1,277 @@
+*{
+    font-family: 'open sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+body{
+    background:  #011443;
+    ;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+
+
+/*SIDEBAR */
+#sidebar{
+    position: fixed;
+    width: 260px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    
+}
+#sidebar .brand{
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 6vh;
+    margin-bottom: 15vh;
+    margin-left: 2rem;
+}
+
+#sidebar .icon {
+    min-width: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#sidebar .icon-right{
+    margin-left: auto;
+}
+ 
+#sidebar .side-menu{
+    margin: 36px 0;
+    padding: 0 20px;
+}
+#sidebar .side-menu a{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #ffffff;
+    transition: all ,3s ease;
+    padding: 12px 16px 12px 0;
+    border-radius: 10px;
+    margin: 4px 0;
+    
+}
+
+#sidebar .dvd{
+    margin-top: 35px;
+}
+
+#sidebar .side-menu a:hover{
+    background: #ffffff;
+    color: #011443;
+    transition: 0.5s;
+}
+
+#sidebar .divider{
+    margin-top: 2vh;
+    margin-left: 2vw;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #aaaaaa;
+}
+/*SIDEBAR */
+/*MAIN */
+.center{
+    position: absolute;
+    top: 8%;
+    left: 20%;
+    /* width: 1300px; */
+    width: 85%;
+    height: 85vh;
+    background: white;
+    border-radius: 60px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 2);
+}
+
+main {
+	width: 100%;
+	padding: 55px 20px 20px 55px;
+}
+main .title {
+	font-size: 3rem;
+	font-weight: 900;
+	margin-bottom: 4vh;
+    color: #011443;
+}
+
+main .active{
+    width: 25%;
+    margin-left: 54vw;
+    margin-top: -14vh;
+    font-size: 1.4rem;
+    padding: 2% 3%;
+    display: block;
+    border: 1px solid transparent;
+    font-weight: 300;
+    border-radius: 10px;
+}
+
+main .active{
+    background-color: #011443;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+main .Packages{
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #011443;
+    margin-left: 70vh;
+    margin-top: 1vh;
+}
+
+main .table{
+    position: absolute;
+    width: 27%;
+    left: 65%;
+    top: 32%;
+    border-collapse: collapse;
+    border-color: #011443;
+    background-color: #011443;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 1.2rem;
+}
+main .tr{
+    transition: all .2s ease-in;
+    cursor: pointer;
+}
+
+main .th,td{
+    padding: 12px;
+    text-align: left;
+    border-left: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
+}
+
+main .graph{
+    width: 50%;
+    margin-left: 5%;
+    margin-top: 1%;
+    display: flex;
+}
+
+@media (max-width: 700px){
+    #sidebar .brand{
+        font-size: 1.5rem;
+        display: flex;
+        justify-content:center;
+        font-weight: 500;
+        margin-top: 2vh;
+    }
+    .center{
+        left: 0%;
+        width: 100%;
+        height: 120%;
+        border-radius: 35px 35px 0px 0px;
+    }
+    main .title {
+        font-size: 1.7rem;
+        font-weight: 900;
+        margin-left: -15%;
+        margin-top: -8%;
+    }
+    main .active{
+        width: 100%;
+        margin-left: -1rem;
+        margin-top: 3rem;
+    }
+    main .Packages{
+        font-size: 1rem;
+        margin-left: -6vh;
+        margin-top: -20vh;
+    }
+    main .graph{
+        margin-left: -17%;
+        margin-top: 50%;
+        display: flex;
+        width: 100%;
+
+    }
+    main .table{
+        position: absolute;
+        left: 5%;
+        top: 70vh;
+        width: 90%;
+    }
+}
+/*MAIN */
+
+@media screen and (min-width: 1400px){
+    #sidebar .brand{
+        font-size: 2.3rem;
+        height: 8vh;
+        margin-top: 8vh;
+        margin-bottom: 15vh;
+        margin-left: 5vw;
+    }
+    #sidebar .icon {
+        min-width: 5vw;
+    }     
+    #sidebar .side-menu{
+        margin: 15vh 0;
+        padding: 0 4vh;
+    }
+    #sidebar .side-menu a{
+        font-size: 0.9rem;
+        transition: all ,2s ease;
+        padding: 3vh 1vw 2vh 0;
+    }
+    #sidebar .dvd{
+        margin-top: 2vh;
+    }
+    #sidebar .side-menu a:hover{
+        background: #ffffff;
+    }
+    
+    .center{
+        width: 85%;
+        height: 85vh;
+    }
+    main .title {
+        font-size: 3.4rem;
+        margin-bottom: 5vh;
+    }
+    main .active{
+        font-size: 1.6rem;
+    }    
+    main .Packages{
+        font-size: 2rem;
+        margin-left: 60vh;
+        margin-top: 2vh;
+    }
+    main .table{
+        width: 30%;
+        height: 50%;
+        left: 62%;
+        top: 32%;
+        font-size: 1.2rem;
+    }
+    main .graph{
+        width: 50%;
+        margin-left: 5%;
+        margin-top: 4%;
+        display: flex;
+    }
+    
+}
