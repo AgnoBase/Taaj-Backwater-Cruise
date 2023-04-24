@@ -10,6 +10,5 @@ class BookingForm(forms.Form):
     time = forms.TimeField(widget=TimeInput(attrs={'type':'time','ṇame':'time','id':"label-name",'class':'inputbx','placeholder':'Time'}))
     adults = forms.IntegerField(widget = NumberInput(attrs={'name':'adults','id':"label-name",'placeholder':'No. of adults','class':'inputbx'}))
     child = forms.IntegerField(widget = NumberInput(attrs={'name':'children','id':"label-name",'placeholder':'No. of children','class':'inputbx'}))
-    
-class Emailform(forms.Form):
     email= forms.CharField(max_length=100,widget= forms.EmailInput(attrs={'class':'inputbx','id':'label_name','placeholder':'Email'}))
+    

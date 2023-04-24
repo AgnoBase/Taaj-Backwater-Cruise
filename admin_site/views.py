@@ -5,8 +5,6 @@ from django.contrib.auth import authenticate,login
 from booking.models import Booking,Plans
 from .forms import AdminProfile
 from django.contrib.auth import logout
-from plan.forms import *
-from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import user_passes_test
 # Create your views here.
 
@@ -18,7 +16,6 @@ def admin_login(request):
         if form.is_valid():
             username = form.cleaned_data.get('username')
             password = form.cleaned_data.get('password')
-            print(username,password)
             match = User.objects.get(username=username)
             if match is not None:
                 if match.is_superuser==True:
@@ -27,7 +24,7 @@ def admin_login(request):
                     print(user)
                     if user:
                         login(request, user)
-                        return redirect('../../admin-area/dashboard')
+                        return redirect('../../admin_area/dashboard')
             else:
                 print('invalid credentials')
     return render(request,'admin_area/login.html',{'form':form})
@@ -36,33 +33,39 @@ def admin_login(request):
 
 
 @user_passes_test(lambda u: u.is_superuser,
-                  login_url='../../admin-area/login')
+                  login_url='../../admin_area/login')
 def admin_logout(request):
     logout(request)
-    return redirect('../../admin-area/login')
+    return redirect('../../admin_area/login')
 
 
 
 @user_passes_test(lambda u: u.is_superuser,
-                  login_url='../../admin-area/login')
+                  login_url='../../admin_area/login')
 def admin_dashboard(request):
     no_of_bookings = []
+    name = []
     total_plans = Plans.objects.all()
     total = list(total_plans)
-
+    
+    for i in total:
+        print(i.name)
+        name.append(i.name)
     for i in total :
         no_of_booked_plans = Booking.objects.filter(plan_id = i.id).count()
         no_of_bookings.append(no_of_booked_plans)
-    
+        
+    print(name)
     return render(request, 'admin_area/admin_dashboard.html', 
                   {'title':'Admin|Dashboard', 
                    'plans': total_plans , 
-                   'no_of_bookings': no_of_bookings})
+                   'no_of_bookings': no_of_bookings,
+                   'name':name})
 
 
 
 @user_passes_test(lambda u: u.is_superuser,
-                  login_url='../../admin-area/login')
+                  login_url='../../admin_area/login')
 def admin_reservations (request):
     reservations = Booking.objects.all()
     return render(request, 'admin_area/admin_reservation.html', 
@@ -71,7 +74,7 @@ def admin_reservations (request):
 
 
 @user_passes_test(lambda u: u.is_superuser,
-                  login_url='../../../admin-area/login')
+                  login_url='../../../admin_area/')
 def admin_profile(request,userid):
     form = AdminProfile(instance=request.user)
     user = User.objects.get(id=userid)
@@ -87,29 +90,29 @@ def admin_profile(request,userid):
 
 
 @user_passes_test(lambda u: u.is_superuser,
-                  login_url='../../admin-area/login')
+                  login_url='../../admin_area/')
 def admin_password_verify(request):
     return render(request,'admin_area/admin_password_verify.html')
 
 
 @user_passes_test(lambda u: u.is_superuser,
-                  login_url='../../admin-area/login')
+                  login_url='../../admin_area/')
 def plan_create (request):
     if request.method == 'POST':
         name        =   request.POST.get('pname')
         description =   request.POST.get('description')
         Duration    =   request.POST.get('duration')
         price       =   request.POST.get('price')
-        new_plan    =   Plans.objects.create(name=name,  
+        new_plan    =   Plans.objects.create(    name=name,  
                                                  description=description, 
                                                  Duration=Duration, 
                                                  price=price)
-        return redirect('../../../admin-area/dashboard')
+        return redirect('../../../admin_area/dashboard')
     return render(request,'admin_area/admin_plan_create.html')
 
 
 @user_passes_test(lambda u: u.is_superuser,
-                  login_url='../../../admin-area/login')
+                  login_url='../../../admin_area/')
 def plan_update(request,userid):
     plan = get_object_or_404(Plans,id=userid)
     if request.method == 'POST':
@@ -118,6 +121,6 @@ def plan_update(request,userid):
         plan.Duration    =   request.POST.get('duration')
         plan.price       =   request.POST.get('price')
         plan.save()
-        return redirect('../../../../admin-area/dashboard')
+        return redirect('../../../../admin_area/dashboard')
     elif request.method == 'GET':
         return render(request,'admin_area/plan_update.html',{'plan':plan})

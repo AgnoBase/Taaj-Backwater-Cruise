@@ -1,16 +1,115 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Services</title>
+    <link rel="stylesheet" href={% static 'css/services.css' %}>
+    <script src={% static 'js/index.js' %}></script>
 </head>
 <body>
-    <div>
-        {% for plan in Plans %}
-        <a href="{% url 'booking-form' plan.id %}">{{plan.name}}</a>
-        {% endfor %}
+
+ <section style="width: 100%; height: 100%; background-size: 100% 100%; background: url({% static 'image/service_wave.png' %}); background-repeat: no-repeat; background-position-y: -10vh;">
+ 
+  <!--------Navbar------------>
+  <nav class="navbar">
+    <a href="#" class="toggle-button">
+      <span class="bar1"></span>
+      <span class="bar1"></span>
+      <span class="bar1"></span>
+    </a>
+    <div id="brand"><a href="index.html">Tajboat-Website</a></div>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+         <li><a href="index.html">About Us</a></li>
+         <li id="hide"><a href="faqmobile.html">FAQs</a></li>
+         <li id="hidden"><a href="faqmobile.html">FAQs</a></li>
+         <li><a href="index.html">Contact Us</a></li>
+         <li><a href="#cards">Services</a></li>
+        </ul> 
+       
     </div>
+  </nav> 
+ 
+ <!-----------Card-design-------------->
+   
+ <div class="card-deg" id="cards">
+    <img class="img1" src="{% static 'image/card1.png' %}" alt="card1">
+    <img class="img2" src="{% static 'image/card_2.png' %}" alt="card2">
+</div>
+
+</section>
+ <!--------Steps-Bar--------------->
+ <div class="bar-sec">
+    <div class="bar">
+       <div class="head">
+           <p>Select a Plan</p>
+           <p>Easy Booking</p>
+           <p>Online Payment</p>
+       </div>
+       <div class="below">
+           <p>Step 1</p>
+           <p>Step 2</p>
+           <p>Step 3</p>
+       </div>
+       <div class="circle"></div>
+   </div>
+   </div>
+ 
+ <!-------Plan-Carousel-------->
+    <div id="formList">
+        <div id="list">
+            <style>
+                .item{
+                background: url({% static 'image/Book_Boat.png' %});
+                }
+            </style>
+            {% for plan in Plans %}
+                <div class="item">
+                    
+                    <h2>{{plan.name}}</h2>                    
+                <div class="content">
+                                <button class="price-button" onclick="price1()" >Price</button>
+                                <button class="d-button" onclick="changeText1()">Description</button>
+                       
+                        <div class="price">
+                            <table id="tab1">
+                                <tr>
+                                    <td>{{plan.Duration1}}</td>
+                                    <td>{{plan.price1}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{plan.Duration2}} </td>
+                                    <td>{{plan.price2}}</td>
+                                </tr>
+                            </table>
+
+                        </div>
+                        <div class="description" id="describe1">
+                            <p id="des">{{plan.description}} </p>
+                        </div> 
+                </div>
+                <button class="book-boat" onclick="bookForm()">Book</button> 
+                </div>
+        
+            {% endfor %}
+            
+          
+        </div>
+    </div>
+
+    
+    <div class="direction">
+        <button id="prev"> < </button>
+        <button id="next"> > </button>
+    </div>
+
+    <footer></footer>
+    
 </body>
 </html>

@@ -14,29 +14,22 @@
 <body>
     <section>
         <div class='imgbx'>
-            <img src={% static 'image/Book Boat.png' %} alt="Boat photo">  
+            <img src={% static 'image/Book_Boat.png' %} alt="Boat photo">  
         </div>
         <div class='contentbx'>
 
             <div class='formbx'>
-                <div class='field email-form'>
-                    <form action="" method="POST" onsubmit="verify()">
-                        <div class="head">
-                            <span>
-                                <p id="boat-name">{{plan}}</p>
-                                <p id="details">Enter your details</p>
-                            </span>
-                        </div>
-                        <span>
-                            <h2>Email Address</h2>
-                        </span>
-                        {% csrf_token %}
-                    {{emailform.email}}
-                    <button type='submit' name='verify'>verify</button>
-                    <!-- <input type='email' ṇame ='e-mail' id="label-name" placeholder='Enter your email id' class='' name=''> -->
-                </form>
-                </div>
+                <div class='field'>
                 <form action=''method ='POST' name="form-booking" onsubmit="validation()">
+                    <div class="head">
+                        <span>
+                            {% if success_message %}
+                              <p id="details">{{success_message}}</p>
+                            {% endif %}
+                            <p id="boat-name">{{plan}}</p>
+                            <p id="details">Enter your details</p>
+                        </span>
+                    </div>
                     {% csrf_token %}
                     
                     <span>
@@ -50,6 +43,12 @@
                         <!-- <input type='text' ṇame ='lname' id="label-name" placeholder='Last Name' class='inputbx' name=''> -->
                         {{form.lname}}
                     </div>
+                    <div class='field'> 
+                    <span>
+                        <h2>Email Address</h2>
+                    </span>
+                {{form.email}}
+                </div>
                     <span>
                         <h2> Contact No.</h2>
                     </span>
@@ -71,12 +70,14 @@
                             <h2>Members</h2>
                         </span>
                     </div>
+                <!-- <input type='email' ṇame ='e-mail' id="label-name" placeholder='Enter your email id' class='' name=''> -->
+            </div>
                     <div class='field'>
                         {{form.adults}}
                         {{form.child}}
                     </div>
                     <div class="btn-flex">
-                        <button class="btn" type="submit" value="">Book Now</button>
+                        <button class="btn" type="submit" name ='book_btn' value="1">Book Now</button>
                     </div>
                 </form>
                 

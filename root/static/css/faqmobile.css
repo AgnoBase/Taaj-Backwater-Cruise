@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+body{
+    background:white;
+}
+/*navbar*/ 
+#brand{
+    display: none;
+}
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding:  1.4vh;
+  }
+  .navbar-links {
+    height: 100%;
+  }
+  
+  .navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+  }
+ 
+  .navbar-links a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 1rem;
+    font-size: large;
+  }
+  .navbar-links li:hover {
+    text-decoration : underline 3.5px #192a52;
+    text-underline-offset: 1.32vh;
+  }
+  
+  .toggle-button {
+    float: right;
+    position: absolute;
+    top: 1.2rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 16px;
+  }
+  
+  .toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 15px;
+  }
+
+/*Faq-section*/
+.faq-sec{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+.flex{
+    display: flex;
+} 
+ /* Left-side FAQ */
+.left{
+    padding-top: 35vh;
+    margin-left: 3vw;
+    padding-right: 2vw;
+}
+.left h4{
+    font-family:'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 3.9vh;
+    width: 19vw;
+}
+.left p{
+    font-family:'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 15.7px;
+    width: 23.7vw;
+    line-height: 2.5vh;
+} 
+
+button a{
+    text-decoration: none;
+    color: white;
+}
+
+ /*Right-side faq */
+ .right{
+    left: 15vw;
+ }
+ .faqs{
+    margin-top: 17.4vh;
+    background-color: #1C2843;
+    color: white;
+    margin-right: 3vw;
+    border-radius: 15px;
+    margin-bottom: -8.7vh;
+    box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.25);
+}
+.head{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -2vh;
+    padding: 3vh;
+}
+.cont{
+    padding:1.2vh;
+    font-family:'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+.date{
+    margin-left:48.4vw;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+}
+
+#last{
+    margin-bottom: 3vh;
+} 
+
+@media screen and (max-width:990px){
+    /*Navbar*/
+    #brand{
+        display: block;
+        padding-top: 0.1rem;
+    }
+    #brand a{
+        text-decoration: none;
+        color: black;
+    }
+     .navbar {
+        display: block; 
+        flex-direction: column;
+        align-items: flex-start;
+        font-family: 'Inter', sans-serif;
+    }
+    
+    .toggle-button {
+        display: flex;
+    }
+    
+    .navbar-links {
+        display: none;
+        width: 100%;
+        margin-top: 6vh;
+    }
+    
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+    
+    .navbar-links ul li {
+        text-align: center;
+    }
+    
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+    
+    .navbar-links.active {
+        display: flex;
+    }
+
+    /* Faq */
+    .faq-sec{
+        width:100%;
+        margin-top:2rem;
+    }
+    .flex{
+        display: flex;
+        flex-direction : column;
+    }
+    .left{
+        padding-top: 2.7rem;
+        margin-left:-1.89vh;
+        width:75.7vw;
+    }
+    .left h4{
+        width:75.7vw;
+        margin-left:8vh;
+    }
+    .left p{
+        width:75.7vw;
+        top:3vh;
+        margin-left: 8vh;
+    }
+    .btn{
+       /* margin-top:2.7vh;
+        margin-left:8vh; */
+     display: none;
+    } 
+
+    /*FAQ-questions*/
+    
+    .right{
+        margin-top:-15vh;
+        position: static;
+        
+    }
+    .faqs{
+        width:75.7vw;
+        text-align: center;
+        margin-left: 12.5vw;
+    }
+    .date{
+        display: none;
+    }
+   #last{
+    margin-bottom: 6vh;
+   }
+
+}

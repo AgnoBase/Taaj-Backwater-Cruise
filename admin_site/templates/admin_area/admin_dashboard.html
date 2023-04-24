@@ -1,14 +1,15 @@
 {% extends 'admin_area/admin_sidebar.html' %}
 {% load static %}
+{% block title %}Dashboard{% endblock title %}
 {% block static %}<link rel="stylesheet" href={% static 'css/admin_dashboard.css' %}>{% endblock static %}
-{% block content %}
+{% block content %} 
         <!--MAIN-->
         <div class="center">
         <section>
         <main>
             
             <h1 class="title"><b>Welcome</b>, Admin</h1>
-            <li><a href="index_create.html" class="active"><i class='bx bx-edit icon' ></i> Create Packages</a></li>
+            <li><a href={% url 'plan-create' %} class="active"><i class='bx bx-edit icon' ></i> Create Packages</a></li>
             <h3 class="Packages"><b>Your Packages</b></h3>
             <table class="table">
                 <tr>
@@ -18,7 +19,7 @@
                 {% for plan in plans %}
                 <tr>
                     <td>{{forloop.counter}} .</td>
-                    <td>{{plan.name}}</td>
+                    <td> <a href=" {% url 'plan-update' plan.id %} " style='color:white;'>{{plan.name}}</a> </td>
                 </tr>
                 {% endfor %}
             </table>
@@ -34,7 +35,7 @@
                 new Chart(ctx, {
                   type: 'bar',
                   data: {
-                    labels: ['Normal Boating', 'Shikara Boating', 'Sunrise Boating', 'Sunset Boating', 'Honeymoon'],
+                    labels: {{name|safe}},
                     datasets: [{
                       label: '',
                       data: {{no_of_bookings}},
