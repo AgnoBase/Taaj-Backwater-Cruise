@@ -3,6 +3,7 @@ from django import forms
 from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import PasswordResetForm
+from root.models import Faq
 
 class AdminProfile(UserChangeForm):
     
@@ -22,6 +23,4 @@ class AdminPassword(PasswordResetForm):
         max_length=254,
         widget=forms.EmailInput(attrs={"class":"input-field","placeholder":"Email"}),
     )
-    
-
     

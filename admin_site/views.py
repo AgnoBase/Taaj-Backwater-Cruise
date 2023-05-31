@@ -6,6 +6,9 @@ from booking.models import Booking,Plans
 from .forms import AdminProfile
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import user_passes_test
+from booking.models import Plans
+from root.models import Faq
+
 # Create your views here.
 
 
@@ -98,29 +101,61 @@ def admin_password_verify(request):
 @user_passes_test(lambda u: u.is_superuser,
                   login_url='../../admin_area/')
 def plan_create (request):
+    print(request.POST)
     if request.method == 'POST':
         name        =   request.POST.get('pname')
         description =   request.POST.get('description')
-        Duration    =   request.POST.get('duration')
-        price       =   request.POST.get('price')
+        Duration1    =   request.POST.get('duration1')
+        price1       =   request.POST.get('price1')
+        Duration2    =   request.POST.get('duration2')
+        price2       =   request.POST.get('price2')
+        print(price2,Duration2)
         new_plan    =   Plans.objects.create(    name=name,  
                                                  description=description, 
-                                                 Duration=Duration, 
-                                                 price=price)
+                                                 Duration1=Duration1, 
+                                                 price1=price1,
+                                                 Duration2=Duration2, 
+                                                 price2=price2,)
         return redirect('../../../admin_area/dashboard')
     return render(request,'admin_area/admin_plan_create.html')
 
 
-@user_passes_test(lambda u: u.is_superuser,
-                  login_url='../../../admin_area/')
+# @user_passes_test(lambda u: u.is_superuser,login_url='../admin_area/')
 def plan_update(request,userid):
     plan = get_object_or_404(Plans,id=userid)
+    print(request.POST)
     if request.method == 'POST':
         plan.name        =   request.POST.get('pname')
         plan.description =   request.POST.get('description')
-        plan.Duration    =   request.POST.get('duration')
-        plan.price       =   request.POST.get('price')
+        plan.Duration1    =   request.POST.get('duration1')
+        plan.price1       =   request.POST.get('price1')
+        plan.Duration2    =   request.POST.get('duration2')
+        plan.price2       =   request.POST.get('price2')
+        print(request.POST.get('duration2'))
         plan.save()
         return redirect('../../../../admin_area/dashboard')
-    elif request.method == 'GET':
-        return render(request,'admin_area/plan_update.html',{'plan':plan})
+    return render(request,'admin_area/plan_update.html',{'plan':plan})
+
+
+
+
+def plan_del(request,planid):
+    plan = Plans.objects.get(id = planid)
+    plan.delete()                                                       
+    return redirect('Admin-dashboard')
+
+
+def create_faq(request):
+    context = {}
+    
+    try:
+        if request.method == 'POST':
+            question =   request.POST.get('question')
+            answer   =   request.POST.get('answer')
+            print(question,answer)
+            new_faq  =  Faq.objects.create( question=question,answer=answer,)
+            print(new_faq)
+            context = {'success':'Your FAQ is posted successfully......'}
+    except Exception as e:
+        print(e)
+    return render(request,'admin_area/admin_create_faq.html',context)

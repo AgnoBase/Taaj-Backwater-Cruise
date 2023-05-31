@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {% static 'css/paynow.css' %}">
+    <title>Shikara Boating</title>
+
+</head>
+
+<body>
+    <section>
+        <div class='imgbx'>
+            <img class="form-img" src="{{plan.image.url}}" alt="Boat photo">
+        </div>
+        <!--/{mname}/{lname}/{email}/{cnum}/{duration}/{date}/{time}/{adult}/{child}/{plan_id}-->
+
+        <div class='contentbx'>
+            <div class='formbx'>
+                <div class='field email-form'>
+                        <div class="head">
+                            <span>
+                                <p id="boat-name">{{plan.name}}</p>
+                                <p id="details">Your details</p>
+                            </span>
+                        </div>
+
+
+                </div>
+                <div class="head">
+                    <span>
+                        <p id="personaldetails">Personal Details</p>
+                    </span>
+                </div>
+
+
+                    <span>
+                        <h2> Name : &nbsp &nbsp {{fname}} {{mname}} {{lname}}</h2>
+                    </span>
+
+                    <span>
+                        <h2>Email Address : &nbsp &nbsp {{email}}</h2>
+                    </span>
+
+                    <span>
+                        <h2> Contact No. : &nbsp &nbsp {{cnum}}</h2>
+                    </span>
+
+                    <div>
+                        <span>
+                            <h2>Plan information : &nbsp &nbsp {{plan.name}}</h2>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <h2>Members: </h2>
+                        </span>
+                    </div>
+                    <div>
+                        <span>
+                            <h2>Adults : &nbsp &nbsp {{adult}} &nbsp &nbsp &nbsp &nbsp childeren : &nbsp &nbsp {{child}}</h2>
+                        </span>
+                    </div>
+                </form>
+                <div class="head">
+                    <span>
+                        <p id="plandetails">Plans Details</p>
+                    </span>
+                </div>
+
+
+
+                    <span>
+                        <h2>Plan Name : {{plan.name}}</h2>
+                    </span>
+
+                    <span>
+                        <h2>About : {{plan.description}}</h2>
+                    </span>
+
+                    <span>
+                        <h2 >total : Rs. <span id="price">{{price}}</span></h2>
+                    </span>
+<!--                    <div class="btn-flex">-->
+    <!-- RAZORPAY INTEGRATION HERE -->
+    <form class="text-center border border-light p-5" action="{% url 'success' fname mname lname email cnum duration date time adult child plan_id %}" method="POST">
+        {% csrf_token %}
+        <script src="https://checkout.razorpay.com/v1/checkout.js" data-key="rzp_test_HNRUOAkgghvxhY"
+        data-amount= {{price}} data-currency="INR" data-order_id="{{payment.id}}" data-buttontext="Pay Now"
+        data-name="Taj Backwater Cruise" data-description=""
+        data-image="https://images.pexels.com/photos/16676444/pexels-photo-16676444/free-photo-of-cold-snow-winter-animal.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" data-prefill.name="PC" data-prefill.email="sudhakaranthampi5@gmail.com"
+        data-theme.color="#406897"></script>
+    </form>
+
+<!--</div>-->
+                </form>
+
+                </div>
+        </div>
+        </div>
+    </section>
+<script>
+function Price(){
+    var value = document.getElementById('price').innerHTML
+        if(value == 0 || value<0){
+            alert('Please enter a valid number of elements')
+        }
+    }
+Price()
+</script>
+</body>
+</html>

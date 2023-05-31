@@ -27,11 +27,15 @@
 
                 <label class="fields">Plan Information</label>
                 <span class="input_span">
-                    <input type="number" name="price" placeholder="Price" class="input-field price_field">
-                    <input type="number" name="duration"  placeholder="Duration" class="input-field duration_field">
+                    <input type="number" name="price1" placeholder="Price1" class="input-field price_field"   required>
+                    <input type="number" name="duration1"  placeholder="Duration1" class="input-field duration_field" required>
+                </span>
+                <span class="input_span">
+                    <input type="number" name="price2" placeholder="Price2" class="input-field price_field">
+                    <input type="number" name="duration2"  placeholder="Duration2" class="input-field duration_field">
                 </span>
                 <span class="btn_span">
-                    <button class="btn-1" name='book' type="submit">Book Now</button>
+                    <button class="btn-1" name='book' type="submit">Create Package</button>
                     <button class="btn-2" type="reset">Cancel</button>
                 </span>
                  
@@ -41,9 +45,11 @@
         
         <div class="col-2">
             <img src="{% static 'img/Book Boat.png' %}">
+
             
         </div>
-    <input type="image" class="img_btn" placeholder="Choose Image">
+        <input type="file" class="img_btn" id="myfile" name="myfile" style="display:none;">
+        <label for="myfile" class="img_btn" >Choose Image</label>
 </div>
 </div>
 </body>

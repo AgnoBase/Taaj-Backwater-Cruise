@@ -7,6 +7,9 @@ body{
     margin: 0;
     background:white;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 
 /*---Section-service main page----*/
 section{
@@ -16,6 +19,7 @@ section{
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position-y: -10vh;
+    
 }
 
 /*navbar*/
@@ -185,7 +189,12 @@ section{
     margin:10px;
     scroll-snap-align: start;
 }
-
+/* .backdrop-blur{
+  backdrop-filter: blur(7px);
+}
+.backdrop-blur-none{
+  backdrop-filter: none;
+} */
 #list{
     display: flex;
     width:max-content;
@@ -207,6 +216,7 @@ section{
 .item h2{
     margin-top: 3rem;
     text-align: center;
+    font-family: 'Poppins' , sans-serif;
 }
 .item .content{
     padding:30px;
@@ -226,6 +236,7 @@ section{
     cursor: pointer;
     width: 93px;
     height: 5vh;
+    font-family: "Poppins" , sans-serif;
   }
   .content button:hover{
     background-color: black;
@@ -243,6 +254,7 @@ section{
     width:16rem;
     font-size: 0.8rem;
     font-family: 'Poppins', sans-serif;  
+    font-weight: 700;
   }
   
   .sepc-d{
@@ -255,11 +267,14 @@ section{
     color: white;
     margin-left: 30px;
     font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
   }
   
   td {
     padding: 0.6vh;
     width: 80vw;
+
   }
  
 
@@ -310,18 +325,18 @@ section{
    }
    
    table{
-    margin-left: 7px;
+    margin-left: 5px;
     margin-top: 93px;
    }
    .description{
     width:100%;
-    margin-bottom: -9px;
+    margin-bottom: -40px;
    }
    .description p{
-    margin-left:27px;
+    margin-left:20px;
    }
    .sepc-d{
-      margin-bottom: -21px;
+      margin-bottom: -59.6px;
    }
 
    /*----step-bar----*/
@@ -469,6 +484,9 @@ section{
      .book-boat{
       margin-left: 19.58vw;
      }
+     .description p{
+      margin-left: 38px;
+     }
    }
 
   @media screen and (max-width: 680px){
@@ -476,15 +494,25 @@ section{
       .item{
         width: calc(150vw / 3);
      }
+
+     .description p{
+      margin-left:40px;
+      text-align: left;
+     }
   }
 
-  @media screen and (max-width: 585px){
+  @media screen and (max-width: 598px){
     /*------card-carousel--------*/
     .item{
       width: calc(126vw / 2);
    }
+   .content .description{
+    width:fit-content;
+   }
    .description p{
     margin-left:9vw;
+    margin-right: -20px;
+    text-align: center;
    }
    .book-boat{
     margin-left: 28vw;
@@ -507,12 +535,15 @@ section{
   margin-top: 67px;
   margin-left: -13px;
  }
+ .description p{
+  margin-left: 40px;
+ }
  .book-boat{
   margin-left: 33vw;
  }
 }
 
-@media screen and (max-width:375px){
+@media screen and (max-width:379px){
 
   .toggle-button .bar1{
     margin-left:84vw;
@@ -531,15 +562,16 @@ section{
  table{
   margin-left: -0.3vw;
  }
- .description{
-  margin-left: -3vw;
+ 
+ .description p {
+  margin-left:26px ;
  }
  .book-boat{
   margin-left: 32vw;
  }
 }
 
-@media screen and (max-width:285px){
+@media screen and (max-width:321px){
   .bar{
     width:60vw;
     margin-left: 23vw;
@@ -555,9 +587,9 @@ section{
   }
 
   .item{
-    width:calc(100vw/1);
+    width:calc(92.78vw/1);
   }
    .book-boat{
-    margin-left:41.8vw;
+    margin-left:39vw;
    }
 }

@@ -25,7 +25,7 @@
           <li class="divider">Setting</li>
           <li><a href=" {% url 'Admin-profile' user.id %} "><i class='bx bxs-envelope icon'></i><b>Change Email</b></a></li>
           <li><a href='#'><i class='bx bx-lock-open-alt icon'></i><b>Change Password</b></a></li>
-          <li><a href=""><i class='bx bxs-user-plus icon'></i><b>Add New User</b></a></li>
+          <li><a href=" {% url 'FAQ-create' %} "><i class='bx bxs-user-plus icon'></i><b>Add New FAQ</b></a></li>
           <li class="dvd"><a href="{% url 'Admin-logout' %}"><i class='bx bx-exit icon'></i><b>Logout</b></a></li>
       </ul>
     </section>

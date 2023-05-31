@@ -51,21 +51,26 @@
             margin-bottom: 2vh;
         }
 
-        section .contentbx .formbx span p {
+        section .contentbx .formbx label p {
             font-size: 4vh;
         }
 
-        section .contentbx .formbx span h2 {
+        section .contentbx .formbx label h2 {
             margin-top: 0px;
             margin-bottom: 1vh;
         }
 
+        .error{
+            color: red;
+            font-size:small;
+            margin-bottom: 6px;
+        }
         #boat-name {
             font-size: 7vh;
             font-weight: bolder;
         }
 
-        #label-name {
+        .label-name {
             font-weight: 800;
             color: #8A8484;
         }
@@ -81,9 +86,9 @@
             display: flex;
         }
         .inputbx {
-            border: 1px #ccc;
-            border-radius: 1vh;
-            box-shadow: 0px 0px 6px;
+                border: 1px #ccc;
+                border-radius: 1vh;
+                box-shadow: 0px 0px 6px;
             padding: 1.5vh;
             width: 100%;
         }
@@ -114,7 +119,7 @@
             font-size: 20px;
             cursor: pointer;
             border-radius: 25px;
-            margin-top: -5px;
+            margin-top: 0;
 
         }
 
@@ -123,3 +128,104 @@
             justify-content: center;
             align-items: center;
         }
+
+         /* email-verification field */
+        .verify-email{
+             display:flex;
+             flex-direction: row;
+         }
+        .verify{
+            background: #152238;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            padding: 3%;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            width: 12vw;
+            margin-top:-2vh;
+            margin-left: 200px;
+            align-items: center;
+        }
+       /* duration field */
+       select{
+        margin-right: 10.7px;
+       }
+@media screen and (max-width:720px){
+     section{
+        margin-top:-1.2rem;
+        flex-direction: column;
+        height:auto;
+        margin-left: 27vw;
+     }
+    .imgbx{
+        margin-top:-190px;
+        width: 100%;
+    }
+    img{
+        max-width: 300vh;
+        max-height: 400vh;
+    }
+    .form-img{
+        transform: rotate(-90deg);
+        width:100%;
+     }
+   /*Content-box*/
+    /* .contentbx{
+      margin-top:-30vh;
+    } */
+     /*HEading-name*/
+     #boat-name {
+        margin-top: -150px;
+        margin-left: 20px;
+        font-size:2rem;
+     }
+
+     #details{
+        margin-left: 25px;
+     }
+
+     .booking-details{
+        margin-top: -50px;
+        margin-left: 20px;
+     }
+    .verify-email{
+        flex-direction: column;
+    }
+    .verify{
+        border-radius:5px;
+        width:22vw;
+        margin-top:0.78vh;
+    }
+
+    /*book now button*/
+    .btn-flex{
+        margin-top:2vh;
+    }
+
+    /* Name-fields */
+    #name-fields{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+
+    /* #plan-mobile{
+        display: flex;
+        flex-direction: column;
+    } */
+}
+
+@media screen and (max-width: 300px){
+    .imgbx{
+        display: none;
+    }
+
+    .contentbx{
+        margin-top: 250px;
+        margin-left: 20px;
+    }
+}

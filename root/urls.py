@@ -1,10 +1,11 @@
 from django.urls import path
-from . import views
+from .views import*
 from django.views.generic import TemplateView
+from .views import faq_page
 urlpatterns = [
-    # path('',views.home_page, name="Home-Page"),
-    path('', TemplateView.as_view(template_name="root/index.html"), name='Home-Page'),
+    path('',home_page, name="Home-Page"),
+    # path('', TemplateView.as_view(template_name="root/index.html"), name='Home-Page'),
     path('gallery', TemplateView.as_view(template_name="root/gallery.html"), name='Gallery'),
-    path('faq/learnmore', TemplateView.as_view(template_name="root/faqmobile.html"), name='Faq-learnmore'),
+    path('faq/learnmore', faq_page , name='Faq-learnmore'),
     
 ]

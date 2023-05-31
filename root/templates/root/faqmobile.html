@@ -8,83 +8,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css/faqmobile.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 </head>
 <body>
   
      <!--NAVBAR-->
-     <nav class="navbar">
-        <a href="#" class="toggle-button">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </a>
-        <div id="brand"><a href="{% url 'Home-Page' %}">Tajboat-Website</a></div>
-        <div class="navbar-links">
-          <ul>
-            <li><a href="{% url 'Home-Page' %}#intro">Home</a></li>
-            <li><a href="{% url 'Gallery' %}">Gallery</a></li>
-             <li><a href="{% url 'Home-Page' %}#aboutus ">About Us</a></li>
-             <li><a href="{% url 'Home-Page' %}#contact">Contact Us</a></li>
-             <li><a href="{% url 'service-page' %}">Services</a></li>
-            </ul> 
-           
-        </div>
-      </nav> 
+          <nav class="navbar">
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div id="brand"><a href="#intro">Tajboat-Website</a></div>
+      <div class="navbar-links">
+        <ul>
+          <li><a href="{% url 'Home-Page' %}">Home</a></li>
+          <li><a href="{% url 'Home-Page' %}#gallery">Gallery</a></li>
+           <li><a href="{% url 'Home-Page' %}#aboutus">About Us</a></li>
+           <li id="hide"><a href="{% url 'Faq-learnmore' %}">FAQs</a></li>
+           {% comment %} <li id="hidden"><a href="{% url 'Faq-learnmore' %}">FAQs</a></li> {% endcomment %}
+           <li><a href="{% url 'Home-Page' %}#contact">Contact Us</a></li>
+           <li><a href="{% url 'service-page' %}">Services</a></li>
+          </ul> 
+         
+      </div>
+    </nav> 
 
      <!--FAQ-SECTION-->
     <div class="faq-sec" id="faq">
         <div class="flex">
          <div class="left">
              <h4>Frequently Asked Questions</h4> 
-             <p>Kingfisher Boat Cruise provides wide range of backwater cruises though the Neyyar Lake in Poovar. We've picked Poovar's best boat tours along the lake Neyyar and the village's picturesque canalways. We offs.</p>
-             <button type="button" class="btn btn-primary"><a href="service.html">Book Now</a></button>
+             <p>Do you have any inquiries about the Taj Backwater Cruise? These frequently asked questions may help with your inquiry. If you still can't find the answer to your inquiry, you can email us.</p>
+             <button type="button" class="btn btn-primary"><a href="{% url 'service-page' %}#list">Book Now</a></button>
             </div>
          
           
           <div class="right">
+          {% for faq in faqs %}
             <div class="faqs">
               <div class="head">
                  <div class="heading">
-                  <h4>Arya Qk </h4>
+                  <h4>{{faq.question}}?</h4>
                  </div>
                   <div class="date">
-                    <h4>23May, 2018</h4>
+                    <h4></h4>
                   </div>
               </div>
               <div class="cont">
-                <p>lorem ipsum aman is a good and hot guy. Kingfisher Boat Cruise provides wide range of backwater cruises though the Neyyar Lake in Poovar. We've picked Poovar's best boat tours along the lake Neyyar and the village's picturesque canalways. We offs.</p>
+                <p>{{faq.answer}}</p>
               </div>
             </div> 
-           
-            <div class="faqs">
-               <div class="head">
-                 <div class="heading">
-                  <h4>Tuji Yu</h4>
-                 </div>
-                  <div class="date">
-                    <h4>19 Nov, 2022</h4>
-                  </div>
-              </div>
-              <div class="cont">
-                <p>lorem ipsum aman is a good and hot guy. Kingfisher Boat Cruise provides wide range of backwater cruises though the Neyyar Lake in Poovar. We've picked Poovar's best boat tours along the lake Neyyar and the village's picturesque canalways. We offs.</p>
-              </div>
-          </div>
-  
-          <div class="faqs" id="last">
-            <div class="head">
-              <div class="heading">
-               <h4>Ayca D.</h4>
-              </div>
-               <div class="date">
-                 <h4>12 Oct, 2021</h4>
-               </div>
-           </div>
-           <div class="cont">
-             <p>lorem ipsum aman is a good and hot guy. Kingfisher Boat Cruise provides wide range of backwater cruises though the Neyyar Lake in Poovar. We've picked Poovar's best boat tours along the lake Neyyar and the village's picturesque canalways. We offs.</p>
-           </div>
+            {% endfor %}
        </div>
     </div> 
-
+    <footer class="footer"></footer>
     <script src="index.js"></script>
 </body>
 </html>

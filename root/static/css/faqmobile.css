@@ -4,6 +4,9 @@
 body{
     background:white;
 }
+body::-webkit-scrollbar {
+    display: none;
+}
 /*navbar*/ 
 #brand{
     display: none;

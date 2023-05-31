@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=" {% static 'css/gallery.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
   </head>
   <body>
 
      <section style = " background-image: url({% static 'image/service_wave.png' %}); background-repeat: no-repeat; background-size: 100% 50%; background-position-y: -2vh;">
      <!--NAVBAR-->    
-     <nav class="navbar">
+          <nav class="navbar">
       <a href="#" class="toggle-button">
         <span class="bar"></span>
         <span class="bar"></span>
@@ -22,13 +23,13 @@
       <div id="brand"><a href="#intro">Tajboat-Website</a></div>
       <div class="navbar-links">
         <ul>
-          <li><a href="index.html">Home</a></li>
-           <li><a href="index.html">About Us</a></li>
-           <li><a href="#content">Gallery</a></li>
-           <li id="hide"><a href="faqmobile.html">FAQs</a></li>
-           <li id="hidden"><a href="faqmobile.html">FAQs</a></li>
-           <li><a href="index.html">Contact Us</a></li>
-           <li><a href="service.html">Services</a></li>
+          <li><a href="{% url 'Home-Page' %}">Home</a></li>
+          <li><a href="{% url 'Gallery' %}">Gallery</a></li>
+           <li><a href="{% url 'Home-Page' %}#aboutus">About Us</a></li>
+           <li id="hide"><a href="{% url 'Home-Page' %}#faq">FAQs</a></li>
+           <li id="hidden"><a href="{% url 'Faq-learnmore' %}">FAQs</a></li>
+           <li><a href="{% url 'Home-Page' %}#contact">Contact Us</a></li>
+           <li><a href="{% url 'service-page' %}">Services</a></li>
           </ul> 
          
       </div>
@@ -40,7 +41,7 @@
 
     <!--Content-->
     <div id="content">
-      <h1>Taj Backwater Cruise</h1>
+      <h1 style="font-size: 3rem;">Taj Backwater Cruise</h1>
       {% comment %} <button type="button" class="btn btn-primary"><a href="service.html">Book Your Plan</a></button> {% endcomment %}
     </div>
    
@@ -67,7 +68,7 @@
     </div>
     
      </section>
-
+    <footer class="footer" ></footer>
     <script src=" {% static 'js/gallery.js' %} "></script>
   </body>
 </html>

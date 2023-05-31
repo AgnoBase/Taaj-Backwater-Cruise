@@ -1,45 +1,18 @@
+{% extends "booking/navbar.html" %}
 {% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tajboat-website</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static 'css/home_page.css' %}">
-</head>
-<body>
-     <!--NAVBAR-->    
-     <nav class="navbar">
-      <a href="#" class="toggle-button">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </a>
-      <div id="brand"><a href="#intro">Tajboat-Website</a></div>
-      <div class="navbar-links">
-        <ul>
-          <li><a href="#intro">Home</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-           <li><a href="#aboutus">About Us</a></li>
-           <li id="hide"><a href="#faq">FAQs</a></li>
-           <li id="hidden"><a href="faqmobile.html">FAQs</a></li>
-           <li><a href="#contact">Contact Us</a></li>
-           <li><a href="service.html">Services</a></li>
-          </ul> 
-         
-      </div>
-    </nav> 
-   
-     <section>
+{% block title %}Home Page{% endblock title %}
+{% block static %}<link rel="stylesheet" href={% static 'css/home_page.css' %}>
+<link rel="stylesheet" href="{% static 'css/footer.css' %}"> {% endblock static %}
+{% block content %}
+     <section style="background-image: url({% static 'image/boat.jpg' %});">
     
         <!--Boat-Home--> 
      
       <div class="container" id="intro">
         <div class="set">
-        <h1>DUMMY TEXT</h1>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna </p>
-        <button type="button" class="btn btn-primary">Learn More</button>
+        <h1>TAJ BACKWATER CRUISE</h1>
+        <p>Experience Poovar's stunning backwaters with our eco-friendly boating company. Choose from sightseeing or romantic cruises. Our passionate team showcases natural beauty for a peaceful escape. Join us for a memorable adventure in tranquil Poovar. </p>
+        <button type="button" class="btn btn-primary"> <a href="#aboutus" style="color: aliceblue;">Learn More</a></button>
       </div>
     </div>
   
@@ -50,12 +23,15 @@
     <article>
       <div class="about" id="aboutus">
         <h1>About Us</h1> 
-        <h3>Poovar is a small coastal village in the Trivanthaapuram
+        <h3>Experience the serenity of Poovar on a breathtaking boating cruise
         </h3>
       </div>
       <div>
-        <p>Kingfisher Boat Cruise provides wide range of backwater cruises though the Neyyar Lake in Poovar. We've picked Poovar's best boat tours along the lake Neyyar and the village's picturesque canalways. We offer one hour/two hour rides in motor boats and country boats. 
-          If you visit Kovalam, Kanyakumari, Trivandrum don't miss the opportunity to visit Poovar which is close to these places to enjoy the real and unexploited Poovar with golden sanded beach and beautiful backwaters with estuaries, mangroves.
+        <p>Neyyattinkara's Poovar Island, which is located in the Thiruvananthapuram district, is a popular tourist site. Situated at Kerala's most southern point, it is close to Vizhinjam, a natural harbour. When the tides are higher than usual, Poovar has an estuary that connects to the sea.
+          One of Kerala's most stunning locations is Poovar. The backwaters in Poovar, Kerala are what give the city its attractiveness. At Kerala's poovar, Poovar Boating provides a highly dependable boating service. You can enjoy the divinely endowed beauty of Poovar, Kerala, with the help of our Poovar boating service.
+         With hundreds of living things like birds, fish, trees, and plants, the earth, wind, and water in our service give you an exhilarating sense of these elements. With the help of our service, you may also enjoy the splendour of the well-known river "neyyar" in Poovar.
+         One of the top boating services in Poovar is what we offer. In the centre of poovar is where you can find our boating service. To book a poovar boat ride, you can contact us by phone or online.
+         
         </p>
       </div>      
     </article>
@@ -70,20 +46,21 @@
         <img src="{% static 'image/img13.jpg' %}" alt="Boating-Images">
 	    </div>
 
-    
+      
         <div class="img-cont">
           <div class="top">
             <h2>Poovar is a small coastal village</h2>
           </div>
           <p>
-            Kingfisher Boat Cruise provides wide range of backwater cruises though the Neyyar Lake in Poovar. We've picked Poovar's best boat tours along the lake Neyyar and the village's picturesque canalways. We offs.
+            
+Explore the stunning backwaters of Poovar, a coastal village in southern India, with our eco-friendly boating company. Whether you prefer sightseeing or a romantic cruise, we offer options to suit every preference. Our passionate team showcases the area's natural beauty and provides a peaceful escape for our guests. Join us for a memorable adventure in the tranquil surroundings of Poovar.
           </p>
-          <ul>Types of Services</ul>
-           <li>Shikara Boating</li>
-           <li>Sunset Boating</li>
-           <li>Honeymoon Cruise</li> 
+          <ul>We offer</ul>
+           <li>- Priceless Experience</li>
+           <li>- Custom Packages</li>
+           <li>- Budget Friendly</li>
             <button type="button" class="btn btn-light bt-shadow" ><a href="{% url 'Gallery' %}" id="t-b">See More</a></button>
-            <button type="button" class="btn btn-primary bt-shadow" ><a href="service.html" id="t-w">Book now</a></button>
+            <button type="button" class="btn btn-primary bt-shadow" ><a href="{% url 'service-page' %}#list" id="t-w">Book now</a></button>
         </div>    
     </div>
 
@@ -99,7 +76,7 @@
                      <h4>Phone</h4>
                      <p>+91-9961071628</p>
                      <h4>Email</h4>
-                     <p> sudhakaranthampi5@gmail.com</p>
+                     <p>sudhakaranthampi5@gmail.com</p>
               </div>
         </div>
     </div>
@@ -110,582 +87,30 @@
       <div class="flex">
        <div class="left">
            <h4>Frequently Asked Questions</h4> 
-           <p>Kingfisher Boat Cruise provides wide range of backwater cruises though the Neyyar Lake in Poovar. We've picked Poovar's best boat tours along the lake Neyyar and the village's picturesque canalways. We offs.</p>
+           <p>Do you have any inquiries about the Taj Backwater Cruise? These frequently asked questions may help with your inquiry. If you still can't find the answer to your inquiry, you can email us.</p>
            <button type="button" class="btn btn-primary"><a href="{% url 'Faq-learnmore' %}" class="faq-button">Learn More</a></button>
           </div>
-       
-        
         <div class="right">
-          <div class="faqs">
+          {% for faq in faqs %}
+          <div class="faqs" style="width: 60vw; margin-left: 3vw;">
             <div class="head">
                <div class="heading">
-                <h4>Arya Qk </h4>
+                <h4>{{faq.question}}</h4>
                </div>
-                <div class="date">
-                  <h4>23May, 2018</h4>
-                </div>
+                
             </div>
             <div class="cont">
-              <p>lorem ipsum aman is a good and hot guy. Kingfisher Boat Cruise provides wide range of backwater cruises though the Neyyar Lake in Poovar. We've picked Poovar's best boat tours along the lake Neyyar and the village's picturesque canalways. We offs.</p>
+              <p>{{faq.answer}}</p>
             </div>
           </div> 
-         
-          <div class="faqs">
-             <div class="head">
-               <div class="heading">
-                <h4>Tuji Yu</h4>
-               </div>
-                <div class="date">
-                  <h4>19 Nov, 2022</h4>
-                </div>
-            </div>
-            <div class="cont">
-              <p>lorem ipsum aman is a good and hot guy. Kingfisher Boat Cruise provides wide range of backwater cruises though the Neyyar Lake in Poovar. We've picked Poovar's best boat tours along the lake Neyyar and the village's picturesque canalways. We offs.</p>
-            </div>
-        </div>
-
-        <div class="faqs" id="last">
-          <div class="head">
-            <div class="heading">
-             <h4>Ayca D.</h4>
-            </div>
-             <div class="date">
-               <h4>12 Oct, 2021</h4>
-             </div>
-         </div>
-         <div class="cont">
-           <p>lorem ipsum aman is a good and hot guy. Kingfisher Boat Cruise provides wide range of backwater cruises though the Neyyar Lake in Poovar. We've picked Poovar's best boat tours along the lake Neyyar and the village's picturesque canalways. We offs.</p>
-         </div>
+          {% endfor %}
+        
      </div>
 
         </div>
 
      </div>
     </div> 
-    <style>
-      body{
-    margin: 0;
-    background-color: white;
-    width: 100%;
-    height: 100%;
-}
-/*navbar*/
-#brand{
-    display: none;
-}
-#hidden{
-    display: none;
-}
-.navbar {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    align-items: center;
-    padding:  1.4vh;
-  }
-  .navbar-links {
-    height: 100%;
-  }
-  
-  .navbar-links ul {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-  }
- 
-  .navbar-links a {
-    display: block;
-    text-decoration: none;
-    color: black;
-    padding: 1rem;
-    font-size: large;
-  }
-  .navbar-links li:hover {
-    text-decoration : underline 3.5px #192a52;
-    text-underline-offset: 1.32vh;
-  }
-  
-  .toggle-button {
-    position: absolute;
-    top: 15px;
-    right: 1rem;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-  }
-  
-  .toggle-button .bar {
-    height: 4px;
-    width: 100%;
-    background-color: black;
-    border-radius: 20px;
-  }
-  
- /*landing page*/
-section{
-    width: 100%;
-   height: 100%;
-   font-family: 'Poppins' , sans-serif;
-   background-color: #ffffff;
-   background-image: url("{% static 'image/boat.jpg' %}");
-   background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.container{
-    text-align: center;
-    padding-top: 22vh;
-}
-.set{
-    text-align: center;
-    margin-left: 35.87vh;
-    margin-right: 35.87vh;
-}
-.set p{
-    padding-left: 2vh;
-    padding-right: 2vh;
-}
-.container h1{
-    font-family: 'Inter', sans-serif;
-   font-size: 9.2vh;
-   margin-top: -15vh;
-}
-
-
-
- /*About us*/
-
-article{ 
-    background-image:linear-gradient(to top, #3F99F9 0%,#1C2843 95%);
-    color: white;
-    text-align: center; 
-    padding-right: 16vw;
-    padding-left: 16vw;
-    height: 100%;
-}
-article h1{
-    padding-top: 16.6vh;
-    font-family: 'Inter', sans-serif;
-    font-size: 6vh;
-}    
-article h1:hover{
-    text-decoration : underline 5px white;
-    text-underline-offset: 20px;
-}
-h3{
-    padding-top: 7vh;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 7vh;
-}
-article p{
-    padding-top: 7.5vh;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;  
-    
-} 
-
-/* image section */
-.flex-section{
-    display: flex;
-    flex-direction: row;
-}
-.image-grid {
-    margin-top:16vh;
-	--gap: 16px;
-	--num-cols: 4;
-	--row-height: 300px;
-
-	box-sizing: border-box;
-	padding: var(--gap);
-
-	display: grid;
-	grid-template-columns: repeat(var(--num-cols), 1fr);
-	grid-auto-rows: var(--row-height);
-	gap: var(--gap);
-}
-
-.image-grid>img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
-.image-grid-col-2 {
-	grid-column: span 2;
-}
-
-.image-grid-row-2 {
-	grid-row: span 2;
-}
-
-.img-cont{
-    height: 100%;
-    width: 50vw;
-    padding-top: 27vh;
-    margin-left: 6vw;
-    margin-right:2.6vw;
-} 
-.img-cont p{
-    font-family:'Poppins', sans-serif;
-    font-weight: 400;
-    line-height: 2.4vh;
-}
-.top{
-    font-family : 'Inter',sans-serif;
-    margin-bottom: 3.2vh;
-    font-size: 3vh;
-}
-ul{
-    font-family:'Inter', sans-serif;
-    font-weight: 400;
-    padding-top: 1.5vh;
-    text-decoration: underline 3px black;
-    text-underline-offset: 1vh;
-} 
-li{
-    padding-left: 5.7vh;
-    list-style-type:none; 
-    line-height: 3vh;
-} 
-.bt-shadow{
-    width: 100%;
-    margin-top: 4vh;
-    margin-left: 2vh;
-}
-button a{
-    text-decoration: none;
-}
-#t-b{
-    color:black;
-}
-#t-w{
-    color: white;
-}
-.bt-shadow{
-   
-   /*box-shadow: 2px 2px 5px black;*/
-   width: 7vw;
-}
-
-
-/* Anything udner 1024px */
-@media screen and (max-width: 1024px) {
-	.flex-section{
-      display: flex;
-      flex-direction: column;
-    }
-    .image-grid {
-        margin-top:3rem;
-		--num-cols: 2;
-		--row-height: 200px;
-	}
-
-    .img-cont{
-        width:auto;
-        margin-top: -5rem;
-        margin-bottom: 2rem;
-    }
-    .top h2{
-        font-size: 3vh;
-    }
-    .img-cont p{
-        font-size:2vh;
-    }
-    .img-cont ul{
-        font-size: 2vh;
-        font-weight: bold;
-    }
-    .img-cont li{
-        font-size: 2vh;
-    }
-    .bt-shadow{
-        width:26.8vw;
-        margin-top: 3vh;
-        margin-left:3vw;
-    }
-}
-
-/* address section */
-.add-field{
-    height:100%;
-    position: relative;
-    background: white;
-}
-
-.block{
-    background-image:linear-gradient(to top, #3F99F9 0%,#1C2843 95%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    border-radius: 50px;
-    box-shadow: 5px 5px 14px black;
-    padding-right: -7vw;
-    padding-left: 1vw;
-}
-iframe{ 
-    width: 50vw;
-    height: 68vh;
-    margin-top: 4.5vh;
-    margin-left: 2.8vw;
-    margin-bottom: 4.5vh;
-    border-radius: 25px;   
-}
-.content{
-    padding: 18.5vh;
-    color:white;
-}
-.content h1{
-    text-align: center;
-    font-family:'Poppins', sans-serif;
-    font-weight: 700;
-    margin-bottom:5vh;
-}
-.content h4{
-    padding-right: 2vw;
-}
-.content p{
-    margin-right: 2vw;
-} 
-
- /*faq-section*/
-
-.faq-sec{
-    width: 100%;
-    height: 100%;
-    background-color: white;
-}
-.flex{
-    display: flex;
-} 
- /* Left-side FAQ */
-.left{
-    padding-top: 35vh;
-    margin-left: 3vw;
-    padding-right: 2vw;
-}
-.left h4{
-    font-family:'Poppins', sans-serif;
-    font-weight: 700;
-    font-size: 3.9vh;
-    width: 19vw;
-}
-.left p{
-    font-family:'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 15.7px;
-    width: 23.7vw;
-    line-height: 2.5vh;
-} 
- button .faq-button{
-    text-decoration: none;
-    color:white;
-}
-
- /*Right-side faq */
- .right{
-    left: 15vw;
- }
- .faqs{
-    margin-top: 17.4vh;
-    background-color: #1C2843;
-    color: white;
-    margin-right: 3vw;
-    border-radius: 15px;
-    margin-bottom: -8.7vh;
-    box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.25);
-}
-.head{
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: -2vh;
-    padding: 3vh;
-}
-.cont{
-    padding:1.2vh;
-    font-family:'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-}
-.date{
-    margin-left:48.4vw;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
-}
-
-#last{
-    margin-bottom: 3vh;
-}
-
- /*Responsive-page*/
-
-@media screen and (max-width:990px)
-{  body{
-    background-color: white;
-}
- /*Navbar*/
- #brand{
-    display: block;
-    padding-top: 0.3rem;
-}
-#brand a{
-    text-decoration: none;
-    color: black;
-}
-#hidden{
-    display: block;
-}
- .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    font-family: 'Inter', sans-serif;
-}
-
-.toggle-button {
-    display: flex;
-}
-
-.navbar-links {
-    display: none;
-    width: 100%;
-    margin-top: 6vh;
-}
-
-.navbar-links ul {
-    width: 100%;
-    flex-direction: column;
-}
-
-.navbar-links ul li {
-    text-align: center;
-}
-
-.navbar-links ul li a {
-    padding: .5rem 1rem;
-}
-
-.navbar-links.active {
-    display: flex;
-}
- #hide{
-    display: none;
- }
-/* landing-page*/
-   section{
-    background:url("boat.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-   }
-    .set{
-        text-align: center;
-        margin: 3vh;
-        padding-left: 6vh;
-    }
-    .set h1{
-        font-size: 10vw;
-    }
-    
-     /*About section*/
-     
-     article{
-       width: auto;
-       height: 100%;
-     }
-     .about h1{
-        font-size: 7vw;
-        padding-top: 22vh;
-     }
-     .about h3{
-        font-size: 1.5rem;
-     }
-     article p{
-        font-size: 0.7rem;
-     }
-
-    /*Address-section*/
-    .add-field{
-        background: none;
-    }
-    .block{
-       background: none;
-       margin-top: 8rem;
-       border-radius: 0;
-       display: flex;
-       flex-direction: column;
-       background: linear-gradient(to top, #3F99F9 0%,#1C2843 95%);
-       width: 100%;
-    }
-    iframe{
-        margin-top: 10vh;
-        width: 70vw;
-        height:50vh;
-        margin-left: 15vw;
-    }
-    .content{
-        margin-top: -15vh;
-        margin-left:-5.44rem;
-        margin-bottom : -15vh;
-    }
-  .content h1{
-    width:100%;
-    font-size:larger;
-    margin-left:3.2rem;    
-  }
-    /*faq-sec*/
-    .faq-sec{
-        display: none;
-    }
-    {% comment %} /* Faq 
-    .faq-sec{
-        width:auto;
-        height:auto;
-        margin-top:-12vh;
-    }
-    .flex{
-        display: flex;
-        flex-direction : column;
-    }
-    .left h4{
-        width:50vh;
-        margin-left:8vh;
-    }
-    .left p{
-        width:60vh;
-        top:3vh;
-        margin-left: 8vh;
-    }
-    button{
-        margin-top:2.7vh;
-        margin-left:8vh;
-    } */ {% endcomment %}
-
-    /*FAQ-questions*/
-    
-    {% comment %} .right{
-        margin-top:-8vh;
-        margin-left: 10vh;
-    }
-    .faqs{
-        width:80vh;
-    }
-    .date{
-        display: none;
-    }
-   #last{
-    margin-bottom: 6vh;
-   }
-     {% endcomment %}
-} 
-    </style>
-
-    <script src="index.js"></script>
-</body>
-</html>
+    <footer class="footer"></footer>
+    <script src={% static 'js/index.js' %}></script>
+{% endblock content %}

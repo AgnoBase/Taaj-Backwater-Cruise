@@ -8,12 +8,16 @@
   padding: 0;
   color: white;
 }
-section{
+
+body::-webkit-scrollbar {
+  display: none;
+}
+/* section{
   background-image: url("wave.png");
   background-repeat: no-repeat;
   background-size: 100% 50%;
   background-position-y: -2vh;
-}
+} */
  /*navbar*/
 #brand{
   display: none;
@@ -84,6 +88,7 @@ section{
 }
 
  /*Content*/
+ 
 #content{
     font-family: 'Roboto', sans-serif;
     font-size: 2rem;
@@ -137,6 +142,7 @@ button a{
   right: -22px;
 }
 .wrapper .carousel{
+  margin-top: 10vh;;
   font-size: 0px;
   cursor: pointer;
   overflow: hidden;
@@ -161,6 +167,15 @@ button a{
   margin-left: 0px;
 }
 
+/* FOOTER */
+.footer {
+  position: relative;
+  margin-top: 8vh;
+  background: linear-gradient(90.14deg, #223B61 3.66%, rgba(63, 153, 249, 0.473958) 91.56%);
+  height: 5vh;
+  width: 100%;
+  bottom: 0px;
+}
 
 @media screen and (max-width: 1000px) {
     body{

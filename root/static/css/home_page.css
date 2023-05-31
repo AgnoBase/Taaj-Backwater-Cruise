@@ -8,8 +8,9 @@ body{
     width: 100%;
     height: 100%;
 }
+
 /*navbar*/
-#brand{
+/* #brand{
     display: none;
 }
 #hidden{
@@ -63,7 +64,7 @@ body{
     width: 100%;
     background-color: black;
     border-radius: 20px;
-  }
+  } */
   
  /*landing page*/
 section{
@@ -333,6 +334,7 @@ iframe{
     left: 15vw;
  }
  .faqs{
+    
     margin-top: 17.4vh;
     background-color: #1C2843;
     color: white;
@@ -522,4 +524,4 @@ iframe{
     margin-bottom: 6vh;
    }*/
     
-} 
+}
