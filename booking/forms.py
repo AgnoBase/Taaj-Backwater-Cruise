@@ -2,6 +2,7 @@ from django import forms
 from django.forms.widgets import NumberInput,TimeInput
 
 
+
 class BookingForm(forms.Form):
     fname = forms.CharField(max_length=100, required=True, widget=forms.TextInput(attrs={'class': 'inputbx label_name', 'id': 'name', 'placeholder': 'First name *'}))
     mname = forms.CharField(max_length=100, required=False ,widget= forms.TextInput(attrs={'class':'inputbx label_name','id':'label_name','placeholder':'Middle name'}))

@@ -6,8 +6,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('booking/',include('booking.urls')),
     path('',include('root.urls')),
-    path('admin_area/',include('admin_site.urls')),
-    path('plan/',include('plan.urls')) 
+    path('admin_area/',include('admin_site.urls')), 
 ]
 if settings.DEBUG :
     urlpatterns +=  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

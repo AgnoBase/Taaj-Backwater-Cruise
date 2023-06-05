@@ -2,30 +2,14 @@
 from django.shortcuts import render,redirect
 from .forms import BookingForm
 from django.conf import settings
-import re,random,uuid
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from .models import *
-from plan.models import *
-from django.http import HttpResponse,Http404
+from django.http import Http404
 import razorpay
 from django.views.decorators.csrf import csrf_exempt
-from Project.settings import RAZORPAY_KEY_ID,RAZORPAY_KEY_SECRET
-
-
-
-def phone_validate(num):
-    
-    try:
-        # getting number from booking view and coverting it to string and matching it with Pattern
-        get_num = str(num)
-        Pattern = re.compile("[6-9][0-9]{9}")
-        if (Pattern.match(get_num)):   
-            return True
-        return False
-    except:
-        return False
+from Project.settings import RAZORPAY_KEY_ID,RAZORPAY_KEY_ID
 
 
 # Create your views here.
@@ -81,14 +65,12 @@ def payment(request,fname,mname,lname,email,cnum,duration,date,time,adult,child,
 
     try:
         amount = price * (int(adult)+int(child))
-        client = razorpay.Client(auth=("rzp_test_Y0H7jqXMvYQ0bc", "jFB99fx6JKsbQTpDnGb2f6x6"))
+        client = razorpay.Client(auth=("RAZORPAY_KEY_ID", "RAZORPAY_KEY_ID"))
         pay = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': '1'})
-        print(pay)
         booking = Booking.objects.create(
-            plan=_plan, fname=fname, mname=mname or None, lname=lname, email=email,cnum=cnum, arrivedate=date, time=time,adults=adult,child = child, amount=amount, provider_order_id=pay["id"]
+            plan=_plan, fname=fname, mname=mname or None, lname=lname or None, email=email,cnum=cnum, arrivedate=date, time=time,adults=adult,child = child, amount=amount, provider_order_id=pay["id"]
         )
         booking.save()
-        print(booking)
         context = {
                 'fname': fname,
                 'mname': mname,
@@ -137,9 +119,7 @@ def success(request,fname,mname,lname,email,cnum,duration,date,time,adult,child,
     _plan = Plans.objects.get(id=plan_id)
     
     try:
-        print('emailing')
         if email and fname and lname and cnum and date and time :
-            print('email is started')
             context = {'price':_plan.price1,'plan':_plan.name,'fname':fname,'mname':mname,"adults":adult,'child':child,
                        'lname':lname,'email':email,'contact':cnum,'date':date,
                        'time':time}
@@ -160,7 +140,6 @@ def success(request,fname,mname,lname,email,cnum,duration,date,time,adult,child,
             e.send()
             # context['success'] = f'email is sent to {email}'
         else:
-            print('not sent')
             return render(request,f'booking/payment/{fname}/{mname}/{lname}/{email}/{cnum}/{duration}/{date}/{time}/{adult}/{child}')
     except Exception as e:
         print(e)
@@ -169,7 +148,6 @@ def success(request,fname,mname,lname,email,cnum,duration,date,time,adult,child,
         
     if request=='POST':
         a = request.POST
-        print(a)
         order_id = " "
         for key, val in a.items():
             if key == 'razorpay_order_id':

@@ -1,9 +1,8 @@
 from django.forms import ModelForm
-from django import forms
 from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import PasswordChangeForm
-from root.models import Faq
+from django.forms import ModelForm
+from booking.models import Plans
 
 
 class AdminProfile(UserChangeForm):
@@ -18,3 +17,8 @@ class AdminProfile(UserChangeForm):
         model = User
         fields = ('email',)
         
+
+class PlanForm(ModelForm):
+    class Meta:
+        model = Plans
+        fields = '__all__'

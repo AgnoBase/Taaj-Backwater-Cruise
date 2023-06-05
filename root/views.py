@@ -5,7 +5,6 @@ from .models import Faq
 def home_page(request):
     print('working home page')
     faqs = Faq.objects.order_by('date')[:3]
-    print(faqs)
     try:
         return render(request,'root/index.html',{'faqs':faqs})
     except Exception as e:
@@ -14,9 +13,6 @@ def home_page(request):
     
 def faq_page(request):
     faqs = Faq.objects.all()
-    for faq in faqs:
-        print(faq.question, faq.answer, faq.date)
-    print(faqs)
     return render(request, 'root/faqmobile.html',{'faqs':faqs})
 
     
