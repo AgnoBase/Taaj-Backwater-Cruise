@@ -1,0 +1,596 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+
+body{
+    margin: 0;
+    background:white;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/*---Section-service main page----*/
+section{
+    width: 100%;
+    height: 100%;
+    background:url("wave.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-y: -10vh;
+    
+}
+
+/*navbar*/
+#brand{
+    display: none;
+}
+#hidden{
+    display: none;
+}
+.navbar {
+    background-color:none;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    padding:  1.4vh;
+  }
+  .navbar-links {
+    height: 100%;
+  }
+  
+  .navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+  }
+ 
+  .navbar-links a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    font-size: large;
+  }
+  
+  .navbar-links li:hover {
+    text-decoration : underline 3.5px white;
+    text-underline-offset: 1.32vh;
+  }
+  
+  .toggle-button {
+    position: absolute;
+    top: 17px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+  }
+  
+  .toggle-button .bar1{
+    height: 4px;
+    width: 100%;
+    margin-left:90.6vw;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+/*-----------card-design----------------*/
+.img1 {
+    filter: drop-shadow( 5px 5px 5px black);
+    width: 25vw;
+    position: relative;
+    left: 30vw;
+    margin-top: 10vh;
+    transform: rotate(-15deg);
+    z-index: 4;
+    
+  }
+  
+  .img2 {
+    filter: drop-shadow(5px 5px 10px black);
+    width: 25vw;
+    top: -5.7vh;
+    position: relative;
+    left: 20vw;
+  }
+  .img1:hover{
+    filter: drop-shadow( 5px 5px 10px white);
+  }
+  .img2:hover{
+    filter: drop-shadow( 5px 5px 5px white);
+  }
+/*-----------Steps-Bar----------------*/
+.bar-sec{
+    width:100%;
+    height:10%;
+    margin-top: 8vh;
+}
+.bar{
+    line-height: 0;
+    border-radius: 200px;
+    background-color: white;
+    height: fit-content;
+    bottom: 80vh;
+    width: 70vw;
+    margin-left: 15vw;
+    margin-right: 2vw;
+    filter: drop-shadow(5px 5px 30px #a4a1a1);
+}
+.head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    padding-top: 0.25rem;
+}
+.head:hover{
+  text-decoration: underline;
+}
+.below{
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    justify-content: space-evenly;
+    padding-bottom: 0.25rem;
+    width: 100%;
+}
+.below:hover{
+    color:#a4a1a1;
+}
+.circle {
+    border-radius: 100%;
+    height: 4em;
+    width: 4em;
+    float: right;
+    background: linear-gradient(222.15deg, #588FDA 28.76%, rgba(104, 163, 244, 0) 109.88%);
+    margin-top: -4.58rem;
+    margin-right: 9px;
+}
+
+.circle:hover{
+  background: linear-gradient(222.15deg, #0d2ff1 28.76%, rgba(119, 110, 216, 0) 109.88%);;
+}
+
+/*Card-carousel*/
+.direction{
+    text-align: center;
+}
+.direction button{
+    font-family: cursive;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border:none;
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+    transition: 0.5s;
+    margin:0 10px;
+}
+.direction button:hover{
+    background: rgb(40, 39, 39);
+    color: rgb(206, 204, 204);
+}
+.item{
+    border-radius: 15px;
+    width:300px;
+    height:500px;
+    background: url("cardpic.png");
+    background-size: cover;
+    overflow: hidden;
+    transition: 0.5s;
+    margin:10px;
+    scroll-snap-align: start;
+}
+/* .backdrop-blur{
+  backdrop-filter: blur(7px);
+}
+.backdrop-blur-none{
+  backdrop-filter: none;
+} */
+#list{
+    display: flex;
+    width:max-content;
+}
+#formList{
+    width:1280px;
+    max-width: 100%;
+    overflow: auto;
+    margin:100px auto 50px;
+    scroll-behavior: smooth;
+    scroll-snap-type: both;
+}
+#formList::-webkit-scrollbar{
+    display: none;
+}
+
+
+/*Contents-in-cards*/
+.item h2{
+    margin-top: 3rem;
+    text-align: center;
+    font-family: 'Poppins' , sans-serif;
+}
+.item .content{
+    padding:30px;
+    font-family: monospace;
+}
+
+ .d-button{
+    width: 6rem;
+ }
+ .content button{
+    margin-bottom: 0;
+    margin-left: 1.3rem;
+    text-decoration: none;
+    border-color: none;
+    background: none;
+    border-radius:5px;
+    cursor: pointer;
+    width: 93px;
+    height: 5vh;
+    font-family: "Poppins" , sans-serif;
+  }
+  .content button:hover{
+    background-color: black;
+    color:white;
+  }
+
+  .description {
+    display: none;
+    margin-top: 4.9rem;
+    margin-right:2vw;
+  }
+  
+  .description p {
+    color: white; 
+    width:16rem;
+    font-size: 0.8rem;
+    font-family: 'Poppins', sans-serif;  
+    font-weight: 700;
+  }
+  
+  .sepc-d{
+    margin-bottom : -1.98vh;
+  }
+
+  table {
+    width: 100%;
+    margin-top: 9.6rem;
+    color: white;
+    margin-left: 30px;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+  }
+  
+  td {
+    padding: 0.6vh;
+    width: 80vw;
+
+  }
+ 
+
+  /*--------Book button--------*/
+  .book-boat{
+    margin-left: 120px;
+    text-decoration: none;
+    border: none;
+    color: white;
+    background: rgb(1, 10, 36);
+    border-radius:100%;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+  }
+
+  .special-btn{
+    margin-top:1.97rem;
+  }
+ /*--Footer---*/
+  footer {
+  position: relative;
+  margin-top: 8vh;
+  background: linear-gradient(90.14deg, #223B61 3.66%, rgba(63, 153, 249, 0.473958) 91.56%);
+  height: 5vh;
+  width: 100%;
+  bottom: 0px;
+}
+  
+
+  /*Responsive media querey*/
+  @media screen and (max-width: 1024px){
+    .item{
+        width: calc(87vw -37vw);
+        background-size: cover;
+        margin:25px;
+    }
+    
+  .content{
+    margin: 25px 25px 25px -30px;
+    width:100%;
+    font-family: monospace;
+    text-align: center;
+}
+   
+   .content button{
+    width: 93px;
+   }
+   
+   table{
+    margin-left: 5px;
+    margin-top: 93px;
+   }
+   .description{
+    width:100%;
+    margin-bottom: -40px;
+   }
+   .description p{
+    margin-left:20px;
+   }
+   .sepc-d{
+      margin-bottom: -59.6px;
+   }
+
+   /*----step-bar----*/
+   .bar{
+    width: 87vw;
+    margin-left: 7vw;
+   }
+   .head p{
+    font-size: 2vh;
+    padding: 0.8vw;
+}
+   .below p{
+    font-size: 2.3vh;
+    margin-top:1vh;
+   }
+   .circle{
+    display: none;
+   }
+ 
+}
+
+
+
+  
+  @media screen and (max-width:770px) {
+    
+        /*Navbar*/
+ #brand{
+  display: block;
+  margin-top: 13.7px;
+  margin-left: 1rem;
+  font-size: 2.5vh;
+}
+#brand a{
+  text-decoration: none;
+  color: white;
+}
+#hidden{
+  display: block;
+}
+.navbar {
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Inter', sans-serif;
+  height: 100%;
+}
+
+.toggle-button {
+  display: flex;
+  width: 28px;
+  height: 20px;
+  margin-right:7vh;
+}
+.navbar-links {
+  display: none;
+  width: 100%;
+  margin-top: 6vh;
+}
+
+.navbar-links ul {
+  width: 100%;
+  flex-direction: column;
+}
+
+.navbar-links ul li {
+  text-align: center;
+}
+
+.navbar-links ul li a {
+  padding: .5rem 1rem;
+}
+
+.navbar-links.active {
+  display: flex;
+}
+#hide{
+  display: none;
+}
+
+    /*svg image*/
+    section{
+        width: 100%;
+        height: 100%;
+    }
+    /*-----------card-design----------------*/
+.img1 {
+    filter: drop-shadow( 5px 5px 5px black);
+    width: 50vw;
+    left: 7vw;
+    margin-top: 13vh;    
+  }
+.img2 {
+    filter: drop-shadow(5px 5px 5px black);
+    width: 37vw;
+    margin-top: 13vh;
+    left: -1rem;
+    z-index: 1;
+  }
+  .img1,.img2:hover{
+    filter: drop-shadow( 5px 5px 5px black);
+  }
+
+    /*-----step-bar----*/
+    .bar{
+        border-radius: 25px;
+        width: 50vw;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        margin-left: 30vw;
+    }
+    .head{
+        display: flex;
+        flex-direction: column;        
+    }
+
+    .head p{
+        width:40vw;
+        font-size: 1rem;
+
+    }
+    .below{
+        display: none;
+    }
+    .circle {
+      display: block;
+        height: 27.3vh;
+        width: 80px;
+        border-radius: 25px;
+        margin-top: 7px;
+        margin-left: -10px;
+        margin-right:8px;
+        margin-bottom: 7px;
+      }
+    
+    /*------card-carousel--------*/
+    .item{
+        width: calc(130vw / 3);
+        background-size:cover;
+     }
+     .direction{
+         display: none;
+     }
+     .book-boat{
+      margin-left: 19.58vw;
+     }
+     .description p{
+      margin-left: 38px;
+     }
+   }
+
+  @media screen and (max-width: 680px){
+      /*------card-carousel--------*/
+      .item{
+        width: calc(150vw / 3);
+     }
+
+     .description p{
+      margin-left:40px;
+      text-align: left;
+     }
+  }
+
+  @media screen and (max-width: 598px){
+    /*------card-carousel--------*/
+    .item{
+      width: calc(126vw / 2);
+   }
+   .content .description{
+    width:fit-content;
+   }
+   .description p{
+    margin-left:9vw;
+    margin-right: -20px;
+    text-align: center;
+   }
+   .book-boat{
+    margin-left: 28vw;
+   }
+}
+
+@media screen and (max-width: 453px){
+ 
+  .toggle-button .bar1{
+    margin-left:88vw;
+  }
+
+  .item{
+    width: calc(76vw / 1);
+ } 
+ .content{
+  width:100%;
+ }
+ .description{
+  margin-top: 67px;
+  margin-left: -13px;
+ }
+ .description p{
+  margin-left: 40px;
+ }
+ .book-boat{
+  margin-left: 33vw;
+ }
+}
+
+@media screen and (max-width:379px){
+
+  .toggle-button .bar1{
+    margin-left:84vw;
+  }
+   
+  .bar{
+    margin-left: 28vw;
+  }
+  .head p{
+     font-size:13px;
+  }
+
+  .item{
+    width: calc(89vw / 1.1);
+ }
+ table{
+  margin-left: -0.3vw;
+ }
+ 
+ .description p {
+  margin-left:26px ;
+ }
+ .book-boat{
+  margin-left: 32vw;
+ }
+}
+
+@media screen and (max-width:321px){
+  .bar{
+    width:60vw;
+    margin-left: 23vw;
+  }
+  .head{
+    padding-right:10px;
+  }
+  .head p{
+    font-size: 11px;
+  }
+  .toggle-button .bar1{
+    margin-left:80vw;
+  }
+
+  .item{
+    width:calc(92.78vw/1);
+  }
+   .book-boat{
+    margin-left:39vw;
+   }
+}

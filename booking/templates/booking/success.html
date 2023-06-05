@@ -1,0 +1,33 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Shikara Boating</title>
+	<link rel="stylesheet" href=" {% static 'css/greet.css'%}">
+
+</head>
+<body>
+	<section>
+	<div class="img">
+		<img src=" {% static 'image/boat_icon.png' %} ">
+	</div>
+	<div class="header">
+		<span>Thank You for Booking With Us.</span>
+	</div>
+	<div class="sub-header">
+		We've sent the download to your inbox.
+	</div>
+	<div class="button">
+		<button class="btn" onclick="redirect('{% url 'Home-Page'%}')" type="submit" value="">Back To Homepage</button>
+	</div>
+</section>
+<script>
+	function redirect(url){
+	window.location.href = url;
+	}
+</script>
+</body>
+</html>

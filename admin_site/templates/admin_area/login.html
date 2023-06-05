@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Login</title>
+    <link rel="stylesheet" type = "text/css" href={% static 'css/login.css' %}>
+</head>
+<body>  
+
+    {% if form.errors and not form.non_field_errors %}
+    <p class="errornote">
+    {% if form.errors.items|length == 1 %} 
+    <p>Please correct the error below. </p>
+    {% else %}
+    Please correct the errors below.
+    {% endif %}
+    </p>
+    {% endif %}
+    
+    {% if form.non_field_errors %}
+    {% for error in form.non_field_errors %}
+    <p class="errornote">
+        {{ error }}
+    </p>
+    {% comment %} here non field means that there is an error generated with combination of fields {% endcomment %}
+    {% endfor %}
+    {% endif %}
+    <div class="center">
+        <hr class="h">
+        <h1>Login</h1>
+        <form action="{{ app_path }}" method="post">
+            {% csrf_token %}
+            <div class="txt_field" >
+                {{ form.username.errors }}
+        {% comment %} {{ form.username.label_tag }}  {% endcomment %}
+        {{ form.username }}
+                <span></span>
+                <label>Username</label>
+            </div>
+            <div class="txt_field">
+                {{ form.password }}
+                <input type="hidden" name="next" value="{{ next }}" required>
+                <span></span>
+                <label>Password</label>
+            </div>
+            {% url 'admin_password_reset' as password_reset_url %}
+            {% if password_reset_url %}
+            <div class="password-reset-link">
+                <a href="{{ password_reset_url }}">Forgotten your password or username?</a>
+            </div>
+            {% endif %}
+            <input type="submit" value='Log in'>
+            
+        </form>
+    </div>   
+    
+    {% if user.is_authenticated %}
+    <p class="errornote">
+    you are not supposed to be here .
+    </p>
+    {% endif %}
+</body>
+</html>

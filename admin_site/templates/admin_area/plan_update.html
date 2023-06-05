@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/style_plan.css' %}" />
+    <title>Admin | Update Package</title>
+    <style>
+      .btn-2 a {
+        color: #011443;
+        text-decoration-style: none;
+      }
+      .btn-2 a:hover {
+        color: #fff;
+        text-decoration-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="signup-box">
+        <div class="col-1">
+          <div class="header">
+            <h2>Update Packages</h2>
+            <h5>Enter your Packages Details</h5>
+          </div>
+
+          <form class="detail_fields" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label class="fields">Package Name</label>
+            <input
+              type="text"
+              name="pname"
+              value="{{plan.name}}"
+              placeholder="Enter your package name"
+              class="input-field"
+            />
+
+            <label class="fields">Description</label>
+            <input
+              type="text"
+              name="description"
+              value="{{plan.description}}"
+              aria-rowspan="5"
+              aria-colspan="17"
+              placeholder="Enter your Description"
+              class="input-field des_field"
+            />
+
+            <label class="fields">Plan Information</label>
+            <span class="input_span">
+              <input
+                type="number"
+                name="price1"
+                value="{{plan.price1}}"
+                placeholder="price1"
+                class="input-field price_field"
+              />
+              <input
+                type="number"
+                name="duration1"
+                value="{{plan.Duration1}}"
+                placeholder="duration1"
+                class="input-field duration_field"
+              />
+            </span>
+            <span class="input_span">
+                    <input type="number" name="price2" placeholder="Price2" value="{{plan.price2}}" class="input-field price_field">
+                    <input type="number" name="duration2"  placeholder="Duration2" value="{{plan.Duration2}}" class="input-field duration_field">
+            </span>
+
+            <div style="margin-top: 10px;">
+            <label for="imageUpload">Select an image to upload:</label>
+                 <input type="file" id="imageUpload" name="imageUpload">
+            </div> 
+
+            <span class="btn_span">
+              <button class="btn-1" name="book" type="submit">Save</button>
+              <button class="btn-2" type="submit" > <a href="{% url 'plan-delete' plan.id %}">Delete</a> </button>
+            </span>
+          </form>
+        </div>
+
+        <div class="col-2">
+          <img src="{{plan.image.url}}" />
+        </div>
+      </form>
+
+      </div>
+    </div>
+    <script>
+      function redirect(url){
+        window.location.href = url;
+      }
+    </script>
+  </body>
+</html>

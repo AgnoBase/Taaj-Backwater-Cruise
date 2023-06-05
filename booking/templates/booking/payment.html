@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static 'css/booking_form.css' %}>
+    <title>Booking Form</title>
+    
+</head>
+
+<body>
+<div class="btn-flex">
+    <!-- RAZORPAY INTEGRATION HERE -->
+    <form class="text-center border border-light p-5" action="{% url 'success' fname mname lname email cnum duration date time adult child plan_id %}" method="POST">
+<!--{fname}/{mname}/{lname}/{email}/{cnum}/{duration}/{date}/{time}/{adult}/{child}/{plan_id}-->
+        {% csrf_token %}
+        <!--<script src="https://checkout.razorpay.com/v1/checkout.js" data-key="rzp_test_HNRUOAkgghvxhY"
+        data-amount= {{price}} data-currency="INR" data-order_id="{{payment.id}}" data-buttontext="Pay Now"
+        data-name="Taj Backwater Cruise" data-description=""
+        data-image="https://images.pexels.com/photos/16676444/pexels-photo-16676444/free-photo-of-cold-snow-winter-animal.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" data-prefill.name="PC" data-prefill.email="sudhakaranthampi5@gmail.com"
+        data-theme.color="#406897"></script>-->
+        
+
+    </form>
+
+</div>
+                
+
+</body>
+</html>
+
+
+
+
+{% if success %}
+<p>{{success}}</p>
+  {% endif %}
+

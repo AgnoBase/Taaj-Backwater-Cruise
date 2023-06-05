@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .head {
+            margin-bottom: 6%;
+
+        }
+
+        section {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+        }
+
+        section .imgbx {
+            position: relative;
+            width: 50vw;
+            height: 100vh;
+        }
+
+        section .imgbx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+
+        section .contentbx {
+            display: flex;
+            width: 50%;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        section .contentbx .formbx {
+            margin: 10%;
+        }
+
+
+        section .contentbx .formbx span p {
+            font-size: 4vh;
+        }
+
+        section .contentbx .formbx span h2 {
+            margin-top: -5px;
+            margin-bottom: 1.5vh;
+            font-size: 3vh;
+        }
+
+        #boat-name {
+            font-size: 7vh;
+            font-weight: bolder;
+        }
+
+        #label-name {
+            font-weight: 800;
+            color: #8A8484;
+        }
+
+        #details {
+            color: #8A8484;
+            font-weight: 600;
+            font-size: 3vh;
+            font-weight: bolder;
+            margin-top: -3%;
+        }
+
+        #personaldetails {
+            color: #8A8484;
+            font-weight: 600;
+            font-size: 4vh;
+            font-weight: bolder;
+            margin-top: -3%;
+        }
+
+        #plandetails {
+            color: #8A8484;
+            font-weight: 600;
+            font-size: 4vh;
+            font-weight: bolder;
+            margin-top: 5%;
+        }
+        #TotalMembers{
+            margin-left: 14vw;
+            margin-top: -5vh;
+            font-size: 3vh;
+
+        }
+
+        .btn {
+            background: #152238;
+            border: none;
+            color: white;
+            padding: 3% 10%;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 850;
+            display: inline-block;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 25px;
+            margin-top: 20px;
+            margin-left: 20%;
+
+        }
+
+        .btn-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .btn {
+            background: #152238;
+            border: none;
+            color: white;
+            padding: 3% 10%;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 850;
+            display: inline-block;
+            font-size: 20px;
+            cursor: pointer;
+            border-radius: 25px;
+            margin-top: 20px;
+            margin-left: 20%;
+
+        }
+
+        .btn-flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+@media screen and (max-width:720px){
+     section{
+        margin-top:0rem;
+        flex-direction: column;
+        height:auto;
+        /* margin-left: 0vw; */
+     } 
+
+     section .imgbx img{
+        /* margin-top:; */
+        margin-left: 0vw;
+        width: 100vw;
+        height: 60%;
+        
+    }
+
+   /* /Content-box/ */
+    .contentbx{
+      margin-top:-35vh;
+    }
+    section .contentbx {
+        margin-top:-50vh;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    u{
+        /* margin-top: -2vh; */
+        margin-left: -20vw;
+        font-size: 1.9rem;
+    }
+     /HEading-name/
+     #boat-name{
+        font-size: 1.5rem;
+    }
+    #details{
+        font-size: 0.9rem;
+    }
+    #personaldetails{
+        font-size: 1.2rem;
+    }
+    #plandetails{
+        font-size: 1.2rem;
+    }
+    section .contentbx .formbx span h2{
+        font-size: 0.8rem;
+    }
+    #TotalMembers{
+        font-size: 0.8rem;
+        margin-left: 40vw;
+        margin-top: -3.5vh;
+    }
+    .btn-flex{
+        margin-top:2vh;
+    }
+}

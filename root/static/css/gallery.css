@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@400;700&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+/* section{
+  background-image: url("wave.png");
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  background-position-y: -2vh;
+} */
+ /*navbar*/
+#brand{
+  display: none;
+}
+#hidden{
+  display: none;
+}
+.navbar {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  padding:  1.4vh;
+}
+.navbar-links {
+  height: 100%;
+}
+
+.navbar-links ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.navbar-links a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  font-size: large;
+}
+.navbar-links li:hover {
+  text-decoration : underline 3.5px white;
+  text-underline-offset: 1.32vh;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/*Gallery-section*/
+ 
+.gallery{
+  display: flex;
+  flex-direction: column;
+  padding: 0 35px;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+
+}
+
+ /*Content*/
+ 
+#content{
+    font-family: 'Roboto', sans-serif;
+    font-size: 2rem;
+    margin-top:2vh;
+}
+button{
+    display: block;
+    margin: 1rem 45%;
+    width:9rem;
+    height:3rem;
+}
+button a{
+    text-decoration: none;
+    color: white;
+    font-size:1rem;
+}
+/*Gallery carousel*/
+.wrapper{
+  display: flex;
+  width: 90%;
+  margin-top: 22vh;
+  position: relative;
+}
+.wrapper i{
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  color: white;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  background: black;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.9);
+}
+.wrapper i:hover{
+  background: black;
+}
+.wrapper i:first-child{
+  left: -22px;
+  display: none;
+  z-index: 1;
+}
+.wrapper i:last-child{
+  right: -22px;
+}
+.wrapper .carousel{
+  margin-top: 10vh;;
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+.carousel.dragging{
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.carousel.dragging img{
+  pointer-events: none;
+}
+.carousel img{
+  height: 25vw;
+  object-fit: cover;
+  user-select: none;
+  margin-left: 7vw;
+  width: calc(100% / 3);
+}
+.carousel img:first-child{
+  margin-left: 0px;
+}
+
+/* FOOTER */
+.footer {
+  position: relative;
+  margin-top: 8vh;
+  background: linear-gradient(90.14deg, #223B61 3.66%, rgba(63, 153, 249, 0.473958) 91.56%);
+  height: 5vh;
+  width: 100%;
+  bottom: 0px;
+}
+
+@media screen and (max-width: 1000px) {
+    body{
+        width: 100%;
+        height:100%;
+    }
+     /*Navbar*/
+ #brand{
+  display: block;
+  padding-top: 0.1rem;
+}
+#brand a{
+  text-decoration: none;
+  color: white;
+}
+#hidden{
+  display: block;
+}
+.navbar {
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Inter', sans-serif;
+}
+
+.toggle-button {
+  display: flex;
+}
+
+.navbar-links {
+  display: none;
+  width: 100%;
+  margin-top: 6vh;
+}
+
+.navbar-links ul {
+  width: 100%;
+  flex-direction: column;
+}
+
+.navbar-links ul li {
+  text-align: center;
+}
+
+.navbar-links ul li a {
+  padding: .5rem 1rem;
+}
+
+.navbar-links.active {
+  display: flex;
+}
+#hide{
+  display: none;
+}
+
+    #heading{
+        font-size: 1rem;
+        margin-top:3rem;
+    }
+    button{
+        float:right;
+        width:11rem;
+        height:8vh;
+        margin-left:10rem;
+    }
+  .carousel img{
+    width: 100%;
+    height:70vw;
+  }
+}
+
+@media screen and (max-width : 281px){
+    button{
+        display: block;
+        margin: 1rem;
+        width:11rem;
+        height:3rem;
+    }
+    button a{
+        text-decoration: none;
+        color: white;
+        font-size:1rem;
+    }
+}

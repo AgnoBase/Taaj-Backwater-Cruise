@@ -1,0 +1,152 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+    <script src="{% static 'js/index.js' %}"></script>
+    
+</head>
+<body>
+
+ <section style="width: 100%; height: 100%; background:url({% static 'image/service_wave.png' %}); background-size: 100% 100%; background-repeat: no-repeat; background-position-y: -10vh;">
+ 
+  <!--------Navbar------------>
+  <!--NAVBAR-->    
+     <nav class="navbar">
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div id="brand"><a href="#intro">Tajboat-Website</a></div>
+      <div class="navbar-links">
+        <ul>
+          <li><a href="{% url 'Home-Page' %}">Home</a></li>
+          <li><a href="{% url 'Home-Page' %}#aboutus">About Us</a></li>
+          <li><a href="{% url 'Home-Page' %}#gallery">Gallery</a></li>
+          <li><a href="{% url 'Home-Page' %}#contact">Contact Us</a></li>
+          <li><a href="{% url 'service-page' %}">Services</a></li>
+          <li id="hide"><a href="{% url 'Home-Page' %}#faq">FAQs</a></li>
+          <li id="hidden"><a href="{% url 'Faq-learnmore' %}">FAQs</a></li>
+        </ul> 
+         
+      </div>
+    </nav> 
+ 
+ <!-----------Card-design-------------->
+   
+ <div class="card-deg" id="cards">
+    <a href="#list">
+        <img class="img1" src={% static 'image/card1.png' %} alt="">
+        <img class="img2" src={% static 'image/card2.png' %} alt="">
+    </a>    
+</div>
+ 
+</section>
+ <!--------Steps-Bar--------------->
+ <div class="bar-sec">
+    <div class="bar">
+       <div class="head">
+           <p>Select a Plan</p>
+           <p>Easy Booking</p>
+           <p>Online Payment</p>
+       </div>
+       <div class="below">
+           <p>Step 1</p>
+           <p>Step 2</p>
+           <p>Step 3</p>
+       </div>
+       <div class="circle"></div>
+   </div>
+   </div>
+ 
+ <!-------Plan-Carousel-------->
+    <div id="formList">
+        <div id="list"> 
+            {% for plan in Plans %}
+            <div class="item" style="width:300px; height:500px; background:url('{{plan.image.url}}'); background-size: cover;">
+                <div id="blur{{forloop.counter}}">
+                <h2>{{plan.name}}</h2>                  
+                <div class="content">
+                                <button class="price-button" onclick="price{{forloop.counter}}()" >Price</button>
+                                <button class="d-button" onclick="changeText{{forloop.counter}}()">Description</button>
+                        
+                        <div class="price">
+                            <table id="tab{{forloop.counter}}">
+                                <tr>
+                                    <td>{{plan.Duration1}} hours</td>
+                                    <td>Rs. {{plan.price1}}</td>
+                                </tr>
+                                <tr>
+                                    <td>{{plan.Duration2}} hours</td>
+                                    <td>Rs. {{plan.price2}}</td>
+                                </tr>
+                            </table>
+
+                        </div>
+                        <div class="description" id="describe{{forloop.counter}}">
+                            <p id="des">{{plan.description}}</p>
+                        </div> 
+                </div>
+                <button class="book-boat" onclick=  'Redirect("{% url 'booking-form' plan.id %}")' style="color:aliceblue;text-decoration:none">Book</a></button>
+            </div>
+          </div>
+
+          <script>
+
+            function changeText{{forloop.counter}}() {
+            var element = document.getElementById("tab{{forloop.counter}}")
+            element.style.display="none";
+        
+            var des=document.getElementById("describe{{forloop.counter}}")
+            des.style.display="block";
+           
+            var blur = document.getElementById("blur{{forloop.counter}}")
+             blur.style.backdropFilter = "blur(5px)";
+             blur.style.webkitBackdropFilter = "blur(5px)";
+             }
+        
+        function price{{forloop.counter}}()
+        {   
+            var des=document.getElementById("describe{{forloop.counter}}")
+            des.style.display="none";
+        
+            var price = document.getElementById("tab{{forloop.counter}}")
+            price.style.display="block";
+        
+        }
+        function Redirect(url){
+            window.location.href = url ;
+        }
+         
+            </script>
+          {% endfor %}
+        </div>
+        
+    </div>
+
+    
+    <div class="direction">
+        <button id="prev"> < </button>
+        <button id="next"> > </button>
+        <script>
+            //card carousel 
+        document.getElementById('next').onclick = function(){
+            const widthItem = document.querySelector('.item').offsetWidth;
+            document.getElementById('formList').scrollLeft += widthItem;
+        }
+        document.getElementById('prev').onclick = function(){
+            const widthItem = document.querySelector('.item').offsetWidth;
+            document.getElementById('formList').scrollLeft -= widthItem;
+        } 
+        </script>
+    </div>
+
+    <footer></footer>
+    
+</body>
+</html>

@@ -1,0 +1,242 @@
+*{
+    font-family: 'open sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+body{
+    background:  #011443;
+    ;
+    overflow-x: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+
+
+/*SIDEBAR */
+#sidebar{
+    position: fixed;
+    width: 260px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    
+}
+#sidebar .brand{
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 6vh;
+    margin-bottom: 15vh;
+    margin-left: 2rem;
+}
+
+#sidebar .icon {
+    min-width: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#sidebar .icon-right{
+    margin-left: auto;
+}
+ 
+#sidebar .side-menu{
+    margin: 36px 0;
+    padding: 0 20px;
+}
+#sidebar .side-menu a{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #ffffff;
+    transition: all ,3s ease;
+    padding: 12px 16px 12px 0;
+    border-radius: 10px;
+    margin: 4px 0;
+    
+}
+
+#sidebar .dvd{
+    margin-top: 35px;
+}
+
+#sidebar .side-menu a:hover{
+    background: #ffffff;
+    color: #011443;
+    transition: 0.5s;
+}
+
+#sidebar .divider{
+    margin-top: 2vh;
+    margin-left: 2vw;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #aaaaaa;
+}
+/*SIDEBAR */
+/*MAIN */
+.center{
+    position: absolute;
+    top: 8%;
+    left: 20%;
+    /* width: 1300px; */
+    width: 85%;
+    /* height: 85vh; */
+    height: min-content;
+    background: white;
+    border-radius: 60px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 2);
+}
+
+
+
+@media (max-width: 700px){
+    #sidebar .brand{
+        font-size: 1.5rem;
+        display: flex;
+        justify-content:center;
+        font-weight: 500;
+        margin-top: 2vh;
+    }
+    .center{
+        left: 0%;
+        width: 100%;
+        height: min-content;
+        border-radius: 35px 35px 0px 0px;
+    }
+}
+/*MAIN */
+
+@media screen and (min-width: 1400px){
+    #sidebar .brand{
+        font-size: 2.3rem;
+        height: 8vh;
+        margin-top: 8vh;
+        margin-bottom: 15vh;
+        margin-left: 5vw;
+    }
+    #sidebar .icon {
+        min-width: 5vw;
+    }     
+    #sidebar .side-menu{
+        margin: 15vh 0;
+        padding: 0 4vh;
+    }
+    #sidebar .side-menu a{
+        font-size: 0.9rem;
+        transition: all ,2s ease;
+        padding: 3vh 1vw 2vh 0;
+    }
+    #sidebar .dvd{
+        margin-top: 2vh;
+    }
+    #sidebar .side-menu a:hover{
+        background: #ffffff;
+    }
+    
+    .center{
+        width: 85%;
+        height: min-content;
+    }
+    
+}
+
+.table-container{
+    padding: 0 10%;
+    margin: 60px auto 10px;
+}
+
+.heading{
+    font-size: 45px;
+    text-align: left;
+    color: #000;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead tr th{
+    font-size: large;
+    font-weight: 700;
+    letter-spacing: 0.35px;
+    color: #000000;
+    opacity: 1;
+    padding: 12px;
+    vertical-align: top;
+    border: 1px solid transparent;
+}
+
+.table tbody tr td{
+     font-size: medium;
+     letter-spacing: 0.35px;
+     font-weight: 500;
+     color: #000000;
+     padding: 5px;
+     text-align: center;
+     border: 1px solid transparent;
+}
+
+.table tbody tr td .btn{
+    width: 130px;
+    text-decoration: none;
+    line-height: 35px;
+    display: block;
+    background-color: #011443;
+    font-weight: medium;
+    color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    font-size: 14px;
+    opacity: 1;
+    
+}
+
+@media(max-width: 768px){
+    .table thead{
+        display: none;
+    }
+    .table, .table tbody,.table tr,.table td{
+        display: block;
+        width: 100%;
+    }
+    .table tr{
+        margin-bottom: 15px;
+    }
+    .table tbody tr td{
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    .table td::before{
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: 600;
+        font-size: 14px;
+        text-align: left;
+    }
+}

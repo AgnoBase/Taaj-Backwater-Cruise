@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Admin {% block title %}{% endblock title %}</title>
+    {% block static %}
+      
+    {% endblock static %}
+    
+</head>
+<body>
+    
+    <!--SIDEBAR-->
+    <section id="sidebar">
+      <a href="{% url 'Admin-dashboard' %}" class="brand">TajBackwater Cruise</a>
+      <ul class="side-menu">
+          <li class="divider">Plan Info</li>
+          <li><a href="{% url 'Admin-dashboard' %}"><i class='bx bxs-package icon'></i><b>Packages</b></a>
+          </li>
+          <li><a href=" {% url 'Admin-reservation' %} "><i class='bx bx-laptop icon'></i><b>Reservation</b></a></li>
+          <li class="divider">Setting</li>
+          <li><a href=" {% url 'Admin-profile' user.id %} "><i class='bx bxs-envelope icon'></i><b>Change Email</b></a></li>
+          <li><a href="{% url 'change_password'  %}"><i class='bx bx-lock-open-alt icon'></i><b>Change Password</b></a></li>
+          <li><a href=" {% url 'FAQ-create' %} "><i class='bx bxs-user-plus icon'></i><b>Add New FAQ</b></a></li>
+          <li class="dvd"><a href="{% url 'Admin-logout' %}"><i class='bx bx-exit icon'></i><b>Logout</b></a></li>
+      </ul>
+    </section>
+        <!--SIDEBAR-->
+        {% block content %}
+        {% endblock content %}
+</body>
+</html>

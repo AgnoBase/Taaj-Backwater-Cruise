@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {% static 'css/gallery.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+  </head>
+  <body>
+
+     <section style = " background-image: url({% static 'image/service_wave.png' %}); background-repeat: no-repeat; background-size: 100% 50%; background-position-y: -2vh;">
+     <!--NAVBAR-->    
+          <nav class="navbar">
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div id="brand"><a href="#intro">Tajboat-Website</a></div>
+      <div class="navbar-links">
+        <ul>
+          <li><a href="{% url 'Home-Page' %}">Home</a></li>
+          <li><a href="{% url 'Gallery' %}">Gallery</a></li>
+           <li><a href="{% url 'Home-Page' %}#aboutus">About Us</a></li>
+           <li id="hide"><a href="{% url 'Home-Page' %}#faq">FAQs</a></li>
+           <li id="hidden"><a href="{% url 'Faq-learnmore' %}">FAQs</a></li>
+           <li><a href="{% url 'Home-Page' %}#contact">Contact Us</a></li>
+           <li><a href="{% url 'service-page' %}">Services</a></li>
+          </ul> 
+         
+      </div>
+    </nav> 
+
+
+    <!--Gallery section-->
+    <div class="gallery">
+
+    <!--Content-->
+    <div id="content">
+      <h1 style="font-size: 3rem;">Taj Backwater Cruise</h1>
+      {% comment %} <button type="button" class="btn btn-primary"><a href="service.html">Book Your Plan</a></button> {% endcomment %}
+    </div>
+   
+    <!--Gallery carousel-->
+    <div class="wrapper">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <div class="carousel">
+        <img src=" {% static 'image/img1.jpg' %} " alt="img" draggable="false">
+        <img src=" {% static 'image/img2.jpeg' %} " alt="img" draggable="false">
+        <img src=" {% static 'image/img3.jpg' %} " alt="img" draggable="false">
+        <img src=" {% static 'image/img4.jpg' %} " alt="img" draggable="false">
+        <img src=" {% static 'image/img5.jpg' %} " alt="img" draggable="false">
+        <img src=" {% static 'image/img6.jpeg' %} " alt="img" draggable="false">
+        <img src=" {% static 'image/img7.jpg' %} " alt="img" draggable="false">
+        <img src=" {% static 'image/img8.jpg' %} " alt="img" draggable="false">
+        <img src=" {% static 'image/img9.jpg' %} " alt="img" draggable="false">
+        <img src=" {% static 'image/img10.jpg' %} " alt="img" draggable="false">
+        <img src=" {% static 'image/img11.jpg' %} " alt="img" draggable="false">
+        <img src=" {% static 'image/img12.jpeg' %} " alt="img" draggable="false">
+        <img src=" {% static 'image/img13.jpg' %} " alt="img" draggable="false">
+      </div>
+      <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+    </div>
+    
+     </section>
+    <footer class="footer" ></footer>
+    <script src=" {% static 'js/gallery.js' %} "></script>
+  </body>
+</html>

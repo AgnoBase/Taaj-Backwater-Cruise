@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static 'css/booking_form.css' %}>
+    <title>Booking Form</title>
+    
+</head>
+
+<body>
+    <section>
+        <div class='imgbx'>
+            <img class="form-img" src="{{plan.image.url}}" alt="Boat photo">
+        </div>
+        <div class='contentbx'>
+            <div class='formbx'>
+                <div class='field email-form'>
+                    <form action="" method="POST" onsubmit="verify()">
+                        <div class="head">
+                            <span>
+                                <p id="boat-name">{{plan.name}}</p>
+                                <p id="details">Enter your details</p>
+                            </span>
+                        </div>       
+                </form>
+                </div>
+                <form action='' method ='POST' name="form-booking" onsubmit="validation()">
+                    
+                    {% csrf_token %}
+                    <span>
+                        <h2> Name</h2>
+                    </span>
+                    <div class='field'>   
+                        <!-- <input class="inputbx", id="label_name", placeholder= "First name"> -->
+                        {{form.fname}}
+                        <!-- <input class="inputbx", id="label_name", placeholder= "Middle name"> -->
+                        {{form.mname}}
+                        <!-- <input class="inputbx", id="label_name", placeholder= "Last name"> -->
+                        {{form.lname}}
+                    </div>
+
+                    <div id="name-error" class="error"></div>
+
+                    <label for="email">
+                        <h2>Email Address <span style="color: red; font-weight: 100;">*</span></h2>
+                    </label>
+                    <div class="verify-email">
+                    <!-- <input class="inputbx", id="label_name", placeholder="Email"> -->
+                    {{form.email}}
+                      
+                    </div>
+                    <span>
+                        <h2> Contact No.</h2>
+                    </span>
+                    <div class='field' id="contact" >
+                        <input name="cnum"  , id="label-name" , placeholder="Enter your Mobile Number" , class="inputbx">                        {% comment %} {{form.cnum}} {% endcomment %}
+                         
+                    </div >
+                    <span id="validationMessage"></span>
+                    
+                    <div>
+                        <label>
+                        <h2> Plan Details <span style="color: red; font-weight: 100;">*</span></h2>
+                    </label>
+</div>
+                    <div class='field'>
+                        <label for="duration" hidden></label>
+<!--                        {% comment %} <input type="", ṇame="date", id="label-name", , placeholder="Date">  {% endcomment %}-->
+                        <select name="duration"  id="duration" name="duration" class="inputbx label-name" required>
+                            <option value="">select duration</option>
+                            <option value="{{plan.Duration1}}">{{plan.Duration1}}{% if plan.Duration1 == 1 %}  hour {% else %}  hours {% endif %}</option>
+                            {% if plan.Duration2 %}
+                            <option value="{{plan.Duration2}}">{{plan.Duration2}}{% if plan.Duration2 == 1 %}  hour {% else %}  hours {% endif %}</option>
+                            {% endif %}
+                        </select>
+                        <label for="date" hidden>Date:</label>
+                        {{form.arrivedate}}
+                        <!-- <input type="time", ṇame="time", id="label-name", class="inputbx", placeholder="Time"> -->
+                        {{form.time}}
+                    </div>
+                    <div id="date-error" class="error"></div>
+
+
+                    <div>
+                        <label>
+                            <h2>Members <span style="color: red; font-weight: 100;">*</span></h2>
+                        </label>
+                    </div>
+                    <div class='field'>
+                         <label for="adults" hidden></label>
+                        <!-- <input name="adults", id="label-name", placeholder="No. of adults", class="inputbx"> -->
+                        {{form.adults}}
+
+                        <!-- <input name="Children", id="label-name", placeholder="No. of children", class="inputbx"> -->
+                        {{form.child}}
+                    </div>
+                    <p id="adults-error" class="error"></p>
+                    <div class="btn-flex">
+                        <button class="btn" name="book_btn" value ='1' type="submit" value="" onclick="validateMobileNumber()">Book Now</button>
+                    </div>
+                </form>
+                
+                </div>
+        </div>
+        </div>
+    </section>
+<script src="{% static 'js/booking_form.js' %}"></script>
+</body>
+</html>

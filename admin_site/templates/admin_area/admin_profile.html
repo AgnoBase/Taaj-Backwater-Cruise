@@ -1,0 +1,27 @@
+{% extends "admin_area/admin_sidebar.html" %}
+{% load static %}
+{% block title %} | Profile{% endblock title %}
+{% block static %}
+<link rel="stylesheet" href={% static 'css/admin_dashboard.css' %}>
+<link rel="stylesheet" href={% static 'css/admin_email.css'%}>  
+{% endblock static %}
+{% block content %}
+<!--MAIN-->
+<div class="center">
+    <section>
+    <main>
+        
+        <h1 class="title"><b>Welcome</b>, Admin</h1>
+        {% if success_message %}
+        <p>
+            <h1>{{success_message}}</h1>
+        </p>
+        {% endif %}
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="email" name="nemail" placeholder="new email" id="" class="input-field"><br>
+            <button type="submit" name="email" class="btn-1">update admin</button>
+        </form>
+</section>
+</div>
+{% endblock content %} 
