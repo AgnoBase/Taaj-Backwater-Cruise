@@ -1,1 +1,0 @@
-print("|.|.|.|.|.|.Booking is working.|.|.|.|.|.|.|.|")
