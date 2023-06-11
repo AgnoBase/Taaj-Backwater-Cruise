@@ -83,7 +83,7 @@
                     <!-- RAZORPAY INTEGRATION HERE -->
     <form class="text-center border border-light p-5" action="" method="POST">
         {% csrf_token %}
-        {{booking.payment_id}}
+        {{razorpay_key}}
         <button class='btn' id="rzp-button1">Pay Now</button>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>

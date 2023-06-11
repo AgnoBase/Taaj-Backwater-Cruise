@@ -9,7 +9,7 @@ from .models import *
 from django.http import Http404
 import razorpay
 from django.views.decorators.csrf import csrf_exempt
-from Project.settings import RAZORPAY_KEY_ID,RAZORPAY_KEY_ID
+from Project.settings import RAZORPAY_KEY_ID,RAZORPAY_KEY_SECRET
 
 
 # Create your views here.
@@ -20,7 +20,6 @@ def services_page(request):
     
     try:
         plans = Plans.objects.all()
-        print(plans)
         return render(request,'booking/services.html',{'Plans':plans})
     except Exception as e:
         print(e)
@@ -64,8 +63,9 @@ def payment(request,fname,mname,lname,email,cnum,duration,date,time,adult,child,
         price = _plan.price2 * 100
 
     try:
-        amount = price * (int(adult)+int(child))
-        client = razorpay.Client(auth=("RAZORPAY_KEY_ID", "RAZORPAY_KEY_ID"))
+        amount = price 
+        print(amount)
+        client = razorpay.Client(auth=(RAZORPAY_KEY_ID,RAZORPAY_KEY_SECRET))
         pay = client.order.create({'amount': amount, 'currency': 'INR', 'payment_capture': '1'})
         booking = Booking.objects.create(
             plan=_plan, fname=fname, mname=mname or None, lname=lname or None, email=email,cnum=cnum, arrivedate=date, time=time,adults=adult,child = child, amount=amount, provider_order_id=pay["id"]
@@ -82,7 +82,7 @@ def payment(request,fname,mname,lname,email,cnum,duration,date,time,adult,child,
                 'time': time,
                 'adult': adult,
                 'child': child,
-                'price': price*(int(adult)+int(child)),
+                'price': amount,
                 'payment': pay['id'],
                 'plan_id': plan_id,
                 'plan':_plan,
@@ -90,10 +90,11 @@ def payment(request,fname,mname,lname,email,cnum,duration,date,time,adult,child,
                 "razorpay_key": RAZORPAY_KEY_ID,
                 "booking":booking,
             }
+        
         return render(request,'booking/paynow.html',context)
     except Exception as e:
         print(e)
-
+        
     context = {
                 'fname': fname,
                 'mname': mname,
@@ -105,10 +106,11 @@ def payment(request,fname,mname,lname,email,cnum,duration,date,time,adult,child,
                 'time': time,
                 'adult': adult,
                 'child': child,
-                'price': price * (int(adult)+int(child)),
+                'price': price,
                 'plan_id': plan_id,
                 'plan':_plan
             }
+    print(context.get('price'))
     return render(request,'booking/paynow.html',context)
 
 
